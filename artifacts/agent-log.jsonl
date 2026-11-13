@@ -1,0 +1,1036 @@
+{"ts":"2026-11-13T14:36:18.843Z","source":"agent","category":"build","title":"启动反编译作业 mwf2xwr6-30jo","detail":"unzip-list: unzip -l /home/z/my-project/uploads/test-app.apk"}
+{"ts":"2026-11-13T14:36:19.662Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=2187 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:19.662Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=2188 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:19.662Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=2190 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:19.663Z","source":"agent","category":"probe","title":"$ sleep 3","detail":"pid=2217 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:35.686Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=2257 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:35.686Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=2258 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:35.686Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=2260 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:35.686Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=2261 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:35.686Z","source":"agent","category":"probe","title":"$ timeout 8 curl -sL -r 0-1048576 -o /dev/null -w %{speed_download} --connect-timeout 4 https://ghfast.top/https://github.com/skylot/jadx/releases/downl","detail":"pid=2262 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:35.686Z","source":"agent","category":"probe","title":"$ curl -sL -r 0-1048576 -o /dev/null -w %{speed_download} --connect-timeout 4 https://ghfast.top/https://github.com/skylot/jadx/releases/download/v1.5.6","detail":"pid=2263 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:39.700Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=2269 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:39.700Z","source":"agent","category":"probe","title":"$ timeout 8 curl -sL -r 0-1048576 -o /dev/null -w %{speed_download} --connect-timeout 4 https://gh-proxy.com/https://github.com/skylot/jadx/releases/dow","detail":"pid=2270 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:39.701Z","source":"agent","category":"probe","title":"$ curl -sL -r 0-1048576 -o /dev/null -w %{speed_download} --connect-timeout 4 https://gh-proxy.com/https://github.com/skylot/jadx/releases/download/v1.5","detail":"pid=2271 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:47.706Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=2281 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:47.706Z","source":"agent","category":"probe","title":"$ timeout 8 curl -sL -r 0-1048576 -o /dev/null -w %{speed_download} --connect-timeout 4 https://ghproxy.net/https://github.com/skylot/jadx/releases/down","detail":"pid=2282 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:47.706Z","source":"agent","category":"probe","title":"$ curl -sL -r 0-1048576 -o /dev/null -w %{speed_download} --connect-timeout 4 https://ghproxy.net/https://github.com/skylot/jadx/releases/download/v1.5.","detail":"pid=2283 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:55.715Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=2293 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:55.715Z","source":"agent","category":"probe","title":"$ timeout 8 curl -sL -r 0-1048576 -o /dev/null -w %{speed_download} --connect-timeout 4 https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5","detail":"pid=2294 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:36:55.715Z","source":"agent","category":"probe","title":"$ curl -sL -r 0-1048576 -o /dev/null -w %{speed_download} --connect-timeout 4 https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip","detail":"pid=2295 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:10.733Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=2312 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:10.733Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=2313 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:10.733Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=2315 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:11.734Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=2318 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:11.734Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=2319 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:11.734Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=2321 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:11.734Z","source":"agent","category":"probe","title":"$ sleep 1","detail":"pid=2324 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:19.747Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=2359 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:19.748Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=2360 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:19.749Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=2362 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:19.749Z","source":"agent","category":"probe","title":"$ agent-browser open http://localhost:3000/","detail":"pid=2363 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:19.749Z","source":"agent","category":"probe","title":"$ head -5","detail":"pid=2364 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:19.749Z","source":"agent","category":"probe","title":"$ /home/z/.bun/install/global/node_modules/agent-browser/bin/agent-browser-linux-x64","detail":"pid=2365 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:19.749Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome --remote-debugging-port=0 --no-first-run --no-default-browser-check --disable-background-n","detail":"pid=2369 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:20.746Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=crashpad-handler --user-st","detail":"pid=2372 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:20.746Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype=crashpad-handler --da","detail":"pid=2375 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:20.747Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome --type=zygote --no-zygote-sandbox --no-sandbox --headless=new --crashpad-handler-pid=0 --e","detail":"pid=2377 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:20.747Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome --type=zygote --no-sandbox --headless=new --crashpad-handler-pid=0 --enable-crash-reporter","detail":"pid=2378 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:20.747Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome --type=gpu-process --gpu-recent-crash-count=0 --no-sandbox --disable-dev-shm-usage --headl","detail":"pid=2399 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:22.803Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sand","detail":"pid=2416 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:22.840Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sand","detail":"pid=2428 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:22.843Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome --type=renderer --top-chrome-webui --gpu-client-id=5 --crashpad-handler-pid=0 --enable-cra","detail":"pid=2446 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:22.846Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome --type=renderer --gpu-client-id=7 --crashpad-handler-pid=0 --enable-crash-reporter=, --noe","detail":"pid=2457 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:22.846Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome --type=renderer --gpu-client-id=6 --crashpad-handler-pid=0 --enable-crash-reporter=, --noe","detail":"pid=2462 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:23.792Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome --type=renderer --gpu-client-id=8 --crashpad-handler-pid=0 --enable-crash-reporter=, --noe","detail":"pid=2486 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:23.792Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome --type=renderer --gpu-client-id=9 --crashpad-handler-pid=0 --enable-crash-reporter=, --noe","detail":"pid=2497 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:23.792Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome --type=renderer --gpu-client-id=10 --crashpad-handler-pid=0 --enable-crash-reporter=, --no","detail":"pid=2498 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:23.792Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome --type=renderer --gpu-client-id=11 --crashpad-handler-pid=0 --enable-crash-reporter=, --no","detail":"pid=2578 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:25.783Z","source":"agent","category":"probe","title":"$ node /home/z/my-project/.next/dev/build/postcss.js 39561","detail":"pid=2591 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:29.768Z","source":"agent","category":"probe","title":"$ /home/z/.agent-browser/browsers/chrome-157.0.8103.78/chrome --type=renderer --gpu-client-id=12 --crashpad-handler-pid=0 --enable-crash-reporter=, --no","detail":"pid=2614 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:30.762Z","source":"agent","category":"probe","title":"$ agent-browser wait --load networkidle","detail":"pid=2626 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:30.762Z","source":"agent","category":"probe","title":"$ head -2","detail":"pid=2627 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:33.790Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=2639 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:33.790Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=2640 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:33.791Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=2642 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:37.782Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=2655 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:37.782Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=2656 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:37.782Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=2658 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:37.782Z","source":"agent","category":"probe","title":"$ sleep 1","detail":"pid=2660 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:40.842Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=2671 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:40.842Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=2672 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:40.842Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=2674 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:40.842Z","source":"agent","category":"probe","title":"$ sleep 1.5","detail":"pid=2676 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:56.785Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=2760 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:56.786Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=2761 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:56.786Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=2763 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:37:56.786Z","source":"agent","category":"probe","title":"$ curl -sL -C - --connect-timeout 15 -o jadx.zip https://ghfast.top/https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip","detail":"pid=2764 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:42:21.141Z","source":"agent","category":"probe","title":"$ unzip -qo jadx.zip -d jadx","detail":"pid=3036 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:42:26.147Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=3054 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:42:26.147Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=3055 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:42:26.147Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=3057 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:42:26.147Z","source":"agent","category":"probe","title":"$ curl -sL -C - --connect-timeout 15 -o apktool.jar https://ghfast.top/https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar","detail":"pid=3058 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:38.228Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=3197 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:38.228Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=3198 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:38.228Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=3200 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:38.228Z","source":"agent","category":"probe","title":"$ curl -s http://localhost:3000/api/apk/tools","detail":"pid=3202 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:38.228Z","source":"agent","category":"probe","title":"$ python3 -c import json,sys; d=json.load(sys.stdin); print([(t['id'], t['available'], t['version']) for t in d['tools']], 'diskFree:', d['diskFree'])","detail":"pid=3203 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:43.226Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=3293 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:43.226Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=3294 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:43.227Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=3296 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:43.227Z","source":"agent","category":"probe","title":"$ sleep 2","detail":"pid=3298 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:43.227Z","source":"agent","category":"probe","title":"$ tools/jadx/bin/jadx --version","detail":"pid=3299 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:43.227Z","source":"agent","category":"probe","title":"$ java -XX:+IgnoreUnrecognizedVMOptions -Xms256M -XX:MaxRAMPercentage=70.0 -XX:ParallelGCThreads=3 -Djdk.util.zip.disableZip64ExtraFieldValidation=true ","detail":"pid=3300 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:48.233Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=3389 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:48.233Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=3390 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:48.233Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=3392 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:48.233Z","source":"agent","category":"probe","title":"$ sleep 3","detail":"pid=3394 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:43:53.237Z","source":"agent","category":"probe","title":"$ [bash] <defunct>","detail":"pid=3406 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:09.261Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=3458 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:09.261Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=3459 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:09.261Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=3461 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:12.264Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=3480 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:12.265Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=3481 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:12.265Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=3483 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:12.265Z","source":"agent","category":"probe","title":"$ sleep 4","detail":"pid=3485 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:24.574Z","source":"agent","category":"build","title":"启动反编译作业 mwf38bji-g05r","detail":"jadx: tools/jadx/bin/jadx -d /home/z/my-project/decompiled/jadx-apktool-3.0.3.jar /home/z/my-project/uploads/apktool-3.0.3.jar"}
+{"ts":"2026-11-13T14:44:25.280Z","source":"agent","category":"probe","title":"$ bash /home/z/my-project/scripts/apk-job-runner.sh mwf38bji-g05r /home/z/my-project/apk-jobs/mwf38bji-g05r.json /home/z/my-project/apk-jobs/mwf38bji-g0","detail":"pid=3514 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:25.280Z","source":"agent","category":"probe","title":"$ java -XX:+IgnoreUnrecognizedVMOptions -Xms256M -XX:MaxRAMPercentage=70.0 -XX:ParallelGCThreads=3 -Djdk.util.zip.disableZip64ExtraFieldValidation=true ","detail":"pid=3518 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:39.305Z","source":"agent","category":"probe","title":"$ [python]","detail":"pid=3599 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:48.328Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=3639 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:48.329Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=3640 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:48.329Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=3642 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:52.323Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=3739 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:52.323Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=3740 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:52.323Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=3742 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:44:52.323Z","source":"agent","category":"probe","title":"$ sleep 2","detail":"pid=3743 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:11.345Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=3767 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:11.345Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=3768 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:11.346Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=3770 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:14.349Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=3786 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:14.350Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=3787 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:14.350Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=3789 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:19.399Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=3809 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:19.399Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=3810 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:19.399Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=3812 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:19.399Z","source":"agent","category":"probe","title":"$ agent-browser reload","detail":"pid=3813 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:20.361Z","source":"agent","category":"probe","title":"$ sleep 3","detail":"pid=3819 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:23.392Z","source":"agent","category":"probe","title":"$ sleep 1.5","detail":"pid=3826 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:23.392Z","source":"agent","category":"probe","title":"$ tools/jadx/bin/jadx --version","detail":"pid=3827 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:23.392Z","source":"agent","category":"probe","title":"$ java -XX:+IgnoreUnrecognizedVMOptions -Xms256M -XX:MaxRAMPercentage=70.0 -XX:ParallelGCThreads=3 -Djdk.util.zip.disableZip64ExtraFieldValidation=true ","detail":"pid=3828 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:27.174Z","source":"agent","category":"build","title":"启动反编译作业 mwf39nu9-xsv1","detail":"jadx: tools/jadx/bin/jadx -d /home/z/my-project/decompiled/jadx-apktool-3.0.3.jar /home/z/my-project/uploads/apktool-3.0.3.jar"}
+{"ts":"2026-11-13T14:45:27.393Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=3916 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:27.393Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=3917 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:27.393Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=3919 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:27.393Z","source":"agent","category":"probe","title":"$ sleep 3","detail":"pid=3921 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:27.393Z","source":"agent","category":"probe","title":"$ bash /home/z/my-project/scripts/apk-job-runner.sh mwf39nu9-xsv1 /home/z/my-project/apk-jobs/mwf39nu9-xsv1.json /home/z/my-project/apk-jobs/mwf39nu9-xs","detail":"pid=3922 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:27.393Z","source":"agent","category":"probe","title":"$ java -XX:+IgnoreUnrecognizedVMOptions -Xms256M -XX:MaxRAMPercentage=70.0 -XX:ParallelGCThreads=3 -Djdk.util.zip.disableZip64ExtraFieldValidation=true ","detail":"pid=3926 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:34.449Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=4040 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:34.449Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=4041 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:34.449Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=4044 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:45:34.449Z","source":"agent","category":"probe","title":"$ sleep 15","detail":"pid=4045 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:01.349Z","source":"agent","category":"deliver","title":"工具链安装完成: jadx 1.5.6 + apktool 3.0.3","detail":"2GB 上传通道与 APK 反编译工作台已通过端到端实测，等待用户上传正式 APK"}
+{"ts":"2026-11-13T14:46:01.456Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=4094 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:01.456Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=4095 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:01.457Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=4097 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:01.458Z","source":"agent","category":"probe","title":"$ bun run lint","detail":"pid=4109 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:01.458Z","source":"agent","category":"probe","title":"$ tail -5","detail":"pid=4110 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:01.458Z","source":"agent","category":"probe","title":"$ node /home/z/my-project/node_modules/.bin/eslint .","detail":"pid=4158 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:19.544Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=4203 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:19.544Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=4204 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:19.545Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=4206 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:19.545Z","source":"agent","category":"probe","title":"$ sleep 2","detail":"pid=4212 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:21.598Z","source":"agent","category":"probe","title":"$ sleep 2","detail":"pid=4217 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:21.598Z","source":"agent","category":"probe","title":"$ tools/jadx/bin/jadx --version","detail":"pid=4218 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:21.598Z","source":"agent","category":"probe","title":"$ java -XX:+IgnoreUnrecognizedVMOptions -Xms256M -XX:MaxRAMPercentage=70.0 -XX:ParallelGCThreads=3 -Djdk.util.zip.disableZip64ExtraFieldValidation=true ","detail":"pid=4219 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:23.560Z","source":"agent","category":"probe","title":"$ agent-browser screenshot /tmp/render/apk-lab.png","detail":"pid=4297 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:23.561Z","source":"agent","category":"probe","title":"$ head -1","detail":"pid=4298 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:24.559Z","source":"agent","category":"probe","title":"$ sleep 2","detail":"pid=4301 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:39.571Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=4346 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:39.571Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=4347 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:39.571Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=4349 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:40.567Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=4353 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:40.568Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=4354 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:40.568Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=4356 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:40.568Z","source":"agent","category":"probe","title":"$ sleep 1.5","detail":"pid=4358 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:46:50.467Z","source":"agent","category":"verify","title":"全部功能验证完毕，等待 APK 上传","detail":"UI 端到端实测通过：2GB 上传通道 / jadx+apktool 后台反编译 / 实时日志 / 指令自动捕捉全部就绪"}
+{"ts":"2026-11-13T14:47:10.623Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=4524 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:47:10.623Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=4525 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:47:10.623Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=4527 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:47:17.626Z","source":"agent","category":"probe","title":"$ rg --files --iglob !node_modules --iglob !skills --follow /home/z/my-project","detail":"pid=4592 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:47:18.629Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=4602 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:47:18.629Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=4603 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:47:18.630Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=4605 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:47:18.630Z","source":"agent","category":"probe","title":"$ git add -A","detail":"pid=4606 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:47:21.632Z","source":"agent","category":"probe","title":"$ [bash]","detail":"pid=4622 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:53:56.011Z","source":"system","category":"deliver","title":"上传文件: 虚拟大师_3.2.67.apk","detail":"size=24.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T14:54:01.154Z","source":"system","category":"build","title":"续传文件: 虚拟大师_3.2.67.apk","detail":"size=48.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T14:54:06.793Z","source":"system","category":"build","title":"续传文件: 虚拟大师_3.2.67.apk","detail":"size=72.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T14:54:11.820Z","source":"system","category":"build","title":"续传文件: 虚拟大师_3.2.67.apk","detail":"size=96.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T14:54:17.017Z","source":"system","category":"build","title":"续传文件: 虚拟大师_3.2.67.apk","detail":"size=120.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T14:54:22.609Z","source":"system","category":"build","title":"续传文件: 虚拟大师_3.2.67.apk","detail":"size=144.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T14:54:26.320Z","source":"system","category":"build","title":"续传文件: 虚拟大师_3.2.67.apk","detail":"size=161.2MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T14:57:22.375Z","source":"agent","category":"probe","title":"$ rg --files --iglob !node_modules --iglob !skills --follow /home/z/my-project","detail":"pid=5399 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:58:11.423Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=5482 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:58:11.423Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=5483 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:58:11.423Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=5485 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:58:15.430Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=5516 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:58:15.431Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=5517 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:58:15.431Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=5519 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:58:20.050Z","source":"agent","category":"build","title":"启动反编译作业 mwf3q871-czef","detail":"jadx: tools/jadx/bin/jadx -d /home/z/my-project/decompiled/vmos-jadx /home/z/my-project/uploads/虚拟大师_3.2.67.apk"}
+{"ts":"2026-11-13T14:58:20.442Z","source":"agent","category":"probe","title":"$ bash /home/z/my-project/scripts/apk-job-runner.sh mwf3q871-czef /home/z/my-project/apk-jobs/mwf3q871-czef.json /home/z/my-project/apk-jobs/mwf3q871-cz","detail":"pid=5542 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:58:20.444Z","source":"agent","category":"probe","title":"$ java -XX:+IgnoreUnrecognizedVMOptions -Xms256M -XX:MaxRAMPercentage=70.0 -XX:ParallelGCThreads=3 -Djdk.util.zip.disableZip64ExtraFieldValidation=true ","detail":"pid=5545 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:58:27.490Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=5645 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:58:27.490Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=5646 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:58:27.490Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=5648 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:58:57.473Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=5823 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:58:57.473Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=5824 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:58:57.473Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=5826 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T14:59:00.476Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=5844 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:59:00.477Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=5845 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T14:59:00.477Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=5847 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:03.553Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=5993 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:03.554Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=5994 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:03.554Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=5996 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:03.554Z","source":"agent","category":"probe","title":"$ unzip -qo /home/z/my-project/uploads/虚拟大师_3.2.67.apk lib/arm64-v8a/* assets/groovy_shell.apk -d .","detail":"pid=5998 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:09.569Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=6017 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:09.570Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=6018 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:09.570Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=6020 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:09.570Z","source":"agent","category":"probe","title":"$ curl -s -X POST http://localhost:3000/api/apk/job -H Content-Type: application/json -d {\"action\":\"jadx\",\"file\":\"/home/z/my-project/analysis/shell/groo","detail":"pid=6021 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:09.570Z","source":"agent","category":"probe","title":"$ python3 -c import json,sys; d=json.load(sys.stdin); print('jobId:', d['jobId'], 'cmd:', d['cmd'][:120])","detail":"pid=6022 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:14.987Z","source":"agent","category":"build","title":"启动反编译作业 mwf3sovt-c7ig","detail":"jadx: tools/jadx/bin/jadx -d /home/z/my-project/decompiled/groovy-shell-jadx /home/z/my-project/uploads/groovy_shell.apk"}
+{"ts":"2026-11-13T15:00:15.606Z","source":"agent","category":"probe","title":"$ bash /home/z/my-project/scripts/apk-job-runner.sh mwf3sovt-c7ig /home/z/my-project/apk-jobs/mwf3sovt-c7ig.json /home/z/my-project/apk-jobs/mwf3sovt-c7","detail":"pid=6041 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:15.606Z","source":"agent","category":"probe","title":"$ java -XX:+IgnoreUnrecognizedVMOptions -Xms256M -XX:MaxRAMPercentage=70.0 -XX:ParallelGCThreads=3 -Djdk.util.zip.disableZip64ExtraFieldValidation=true ","detail":"pid=6044 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:21.606Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=6089 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:21.630Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=6090 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:21.631Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=6092 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:21.632Z","source":"agent","category":"probe","title":"$ strings -n 6 libadb.so","detail":"pid=6093 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:21.632Z","source":"agent","category":"probe","title":"$ grep -iE adb|shell|daemon|listen|port|tcp|root","detail":"pid=6094 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:21.690Z","source":"agent","category":"probe","title":"$ sort -u","detail":"pid=6095 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:21.691Z","source":"agent","category":"probe","title":"$ head -25","detail":"pid=6096 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:29.632Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6160 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:29.632Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6161 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:29.632Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=6163 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:47.644Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=6219 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:00:47.645Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=6220 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:01:32.657Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6305 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:01:32.658Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6306 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:01:32.658Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=6308 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:02:03.708Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6372 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:02:03.708Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6373 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:02:03.708Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=6375 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:02:12.721Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6397 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:02:12.721Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6398 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:02:12.721Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=6400 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:02:35.738Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6463 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:02:35.738Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6465 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:02:35.738Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=6467 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:02:56.768Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=6593 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:02:56.769Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=6594 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:02:56.769Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=6597 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:03:31.802Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6707 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:03:31.802Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6708 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:03:31.802Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=6710 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:03:59.304Z","source":"terminal","category":"note","title":"$ bash -c \"echo \\\"=== 系统信息汇总 ===\\\"\"","detail":"exit=0 · 54ms"}
+{"ts":"2026-11-13T15:04:06.048Z","source":"terminal","category":"note","title":"$ cat /etc/os-release | head -n 5","detail":"exit=0 · 30ms"}
+{"ts":"2026-11-13T15:04:06.874Z","source":"terminal","category":"note","title":"$ uname -a","detail":"exit=0 · 23ms"}
+{"ts":"2026-11-13T15:04:07.621Z","source":"terminal","category":"note","title":"$ lscpu | head -n 10 2>/dev/null || cat /proc/cpuinfo | grep -E \"model name|cpu cores\" | head -n 4","detail":"exit=0 · 89ms"}
+{"ts":"2026-11-13T15:04:17.361Z","source":"terminal","category":"note","title":"$ bash -c \"echo \\\"=== 系统信息汇总 ===\\\"\"","detail":"exit=0 · 23ms"}
+{"ts":"2026-11-13T15:04:20.039Z","source":"terminal","category":"note","title":"$ lscpu | head -n 10 2>/dev/null || cat /proc/cpuinfo | grep -E \"model name|cpu cores\" | head -n 4","detail":"exit=0 · 24ms"}
+{"ts":"2026-11-13T15:04:25.379Z","source":"terminal","category":"note","title":"$ ps aux | grep -E \"next|bun\" | grep -v grep","detail":"exit=0 · 17ms"}
+{"ts":"2026-11-13T15:04:33.867Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6879 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:04:33.868Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6880 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:04:33.868Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=6882 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:04:41.878Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6897 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:04:41.878Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6898 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:04:41.879Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=6900 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:04:49.882Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=6921 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:04:49.882Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=6922 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:04:49.882Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=6924 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:05:21.925Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6970 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:05:21.925Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=6971 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:05:21.926Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=6973 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:05:25.929Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=6992 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:05:25.981Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=6993 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:05:25.982Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=6995 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:05:25.982Z","source":"agent","category":"probe","title":"$ bash /home/z/my-project/skills/docx/setup.sh","detail":"pid=6997 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:05:25.982Z","source":"agent","category":"probe","title":"$ tail -3","detail":"pid=6998 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:05:29.933Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=7043 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:05:38.185Z","source":"terminal","category":"note","title":"$ ps aux | grep -E \"next|bun\" | grep -v grep","detail":"exit=0 · 103ms"}
+{"ts":"2026-11-13T15:05:44.875Z","source":"terminal","category":"note","title":"$ ls -lah","detail":"exit=0 · 23ms"}
+{"ts":"2026-11-13T15:05:47.982Z","source":"agent","category":"probe","title":"$ tools/jadx/bin/jadx --version","detail":"pid=7134 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:05:47.982Z","source":"agent","category":"probe","title":"$ java -XX:+IgnoreUnrecognizedVMOptions -Xms256M -XX:MaxRAMPercentage=70.0 -XX:ParallelGCThreads=3 -Djdk.util.zip.disableZip64ExtraFieldValidation=true ","detail":"pid=7135 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:05:52.948Z","source":"agent","category":"probe","title":"$ java -jar tools/apktool.jar --version","detail":"pid=7276 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:05:52.948Z","source":"agent","category":"probe","title":"$ java -jar tools/apktool.jar --version","detail":"pid=7277 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:05:56.139Z","source":"terminal","category":"note","title":"$ ps aux | grep -E \"next|bun\" | grep -v grep","detail":"exit=0 · 21ms"}
+{"ts":"2026-11-13T15:06:45.004Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=7429 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:06:45.005Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=7430 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:06:45.005Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=7432 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:10:04.247Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=7644 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:10:31.267Z","source":"agent","category":"probe","title":"$ python3 scripts/make_explorer_zip.py","detail":"pid=7765 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:10:31.268Z","source":"agent","category":"probe","title":"$ python3 scripts/make_explorer_zip.py","detail":"pid=7766 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:10:58.125Z","source":"system","category":"deliver","title":"上传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=24.0MB · 耗时 0.2s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:11:03.452Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=48.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:11:08.823Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=72.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:11:14.123Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=96.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:11:19.494Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=120.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:11:24.726Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=144.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:11:30.213Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=168.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:11:35.411Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=192.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:11:40.842Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=216.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:11:46.199Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=240.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:11:51.520Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=264.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:11:57.081Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=288.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:12:02.428Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=312.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:12:07.708Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=336.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:12:12.919Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=360.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:12:18.355Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=384.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:12:23.882Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=408.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:12:29.130Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=432.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:12:34.418Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=456.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:12:39.800Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=480.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:12:45.125Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=504.0MB · 耗时 0.1s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:12:46.902Z","source":"system","category":"build","title":"续传文件: user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip","detail":"size=512.6MB · 耗时 0.0s · 落盘 /home/z/my-project/uploads"}
+{"ts":"2026-11-13T15:12:59.400Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=7954 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:12:59.400Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=7955 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:12:59.400Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=7957 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:04.399Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=7980 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:04.399Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=7981 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:04.399Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=7983 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:32.437Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=8087 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:32.437Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=8088 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:32.437Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=8090 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:32.437Z","source":"agent","category":"probe","title":"$ python3 /home/z/my-project/skills/docx/scripts/add_toc_placeholders.py download/虚拟大师_3.2.67_逆向分析报告.docx --auto","detail":"pid=8098 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:38.457Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=8112 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:38.503Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=8113 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:38.504Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=8115 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:38.504Z","source":"agent","category":"probe","title":"$ /usr/lib/libreoffice/program/oosplash --headless --convert-to pdf 虚拟大师_3.2.67_逆向分析报告.docx","detail":"pid=8116 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:39.448Z","source":"agent","category":"probe","title":"$ /usr/lib/libreoffice/program/soffice.bin --headless --convert-to pdf 虚拟大师_3.2.67_逆向分析报告.docx","detail":"pid=8132 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:40.456Z","source":"agent","category":"probe","title":"$ /usr/lib/libreoffice/program/soffice.bin --headless --convert-to pdf 虚拟大师_3.2.67_逆向分析报告.docx","detail":"pid=8137 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:44.451Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=8162 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:44.452Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=8163 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:44.452Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=8165 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:57.466Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=8202 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:57.467Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=8203 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:13:57.467Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=8205 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:15:17.555Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=8396 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:15:17.555Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=8397 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:15:17.555Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=8399 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:15:25.563Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=8422 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:15:25.564Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=8423 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:15:25.564Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=8425 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:15:25.564Z","source":"agent","category":"probe","title":"$ /usr/lib/libreoffice/program/oosplash --headless --convert-to pdf 虚拟大师_3.2.67_逆向分析报告.docx","detail":"pid=8428 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:15:25.564Z","source":"agent","category":"probe","title":"$ /usr/lib/libreoffice/program/soffice.bin --headless --convert-to pdf 虚拟大师_3.2.67_逆向分析报告.docx","detail":"pid=8443 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:15:38.591Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=8478 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:15:38.592Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=8479 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:15:38.594Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=8481 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:16:20.651Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=8569 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:16:20.652Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=8570 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:16:20.652Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=8573 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:16:20.652Z","source":"agent","category":"probe","title":"$ python3","detail":"pid=8574 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:17:42.747Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=8773 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:17:42.747Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=8774 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:17:42.747Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=8776 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:17:42.747Z","source":"agent","category":"probe","title":"$ /usr/lib/libreoffice/program/oosplash --headless --convert-to pdf 虚拟大师_3.2.67_逆向分析报告.docx","detail":"pid=8780 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:17:42.747Z","source":"agent","category":"probe","title":"$ /usr/lib/libreoffice/program/soffice.bin --headless --convert-to pdf 虚拟大师_3.2.67_逆向分析报告.docx","detail":"pid=8795 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:17:42.747Z","source":"agent","category":"probe","title":"$ /usr/bin/gpg --version","detail":"pid=8808 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:18:24.812Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=8908 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:18:24.813Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=8909 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:18:24.813Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=8911 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:18:24.813Z","source":"agent","category":"probe","title":"$ python3 /home/z/my-project/skills/docx/scripts/add_toc_placeholders.py download/虚拟大师_3.2.67_逆向分析报告.docx --auto","detail":"pid=8920 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:18:25.817Z","source":"agent","category":"probe","title":"$ pdftoppm -r 60 -jpeg -jpegopt quality=60 虚拟大师_3.2.67_逆向分析报告.pdf /tmp/render/page","detail":"pid=8958 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:18:32.807Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=8979 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:18:32.807Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=8980 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:18:32.807Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=8982 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:19:05.287Z","source":"agent","category":"deliver","title":"虚拟大师 3.2.67 分析完成，报告已交付","detail":"发现内置加密 Magisk/Superuser/Xposed 插件体系与 Epic.vm 加固壳；root 本质为运行时所有权提权；已输出 docx+PDF 报告至 download/"}
+{"ts":"2026-11-13T15:20:15.936Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=9201 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:20:15.936Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=9202 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:20:15.936Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=9204 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:20:15.936Z","source":"agent","category":"probe","title":"$ git add -A","detail":"pid=9205 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:20:47.971Z","source":"agent","category":"probe","title":"$ git commit -m 8a135bc8-9f23-499f-9019-b6c0c886ea9d","detail":"pid=9240 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:20:49.041Z","source":"agent","category":"probe","title":"$ /usr/lib/git-core/git maintenance run --auto --no-quiet --detach","detail":"pid=9273 · user=z · elapsed=00:01"}
+{"ts":"2026-11-13T15:20:49.041Z","source":"agent","category":"probe","title":"$ /usr/lib/git-core/git gc --auto --no-quiet --no-detach","detail":"pid=9274 · user=z · elapsed=00:01"}
+{"ts":"2026-11-13T15:20:49.041Z","source":"agent","category":"probe","title":"$ /usr/lib/git-core/git repack -d -l --no-write-bitmap-index","detail":"pid=9277 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:20:49.041Z","source":"agent","category":"probe","title":"$ /usr/lib/git-core/git pack-objects --local --delta-base-offset .git/objects/pack/.tmp-9277-pack --keep-true-parents --honor-pack-keep --non-empty --al","detail":"pid=9278 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:25:34.314Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=9620 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:25:34.314Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=9621 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:25:34.315Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=9623 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:26:48.394Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=9763 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:26:48.394Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=9764 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:26:48.394Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=9766 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:26:59.415Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=9792 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:26:59.415Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=9793 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:26:59.415Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=9795 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:26:59.415Z","source":"agent","category":"probe","title":"$ unzip -o user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip -d /tmp/rom12/","detail":"pid=9797 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:26:59.415Z","source":"agent","category":"probe","title":"$ tail -5","detail":"pid=9798 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:32:58.869Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=10225 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:32:58.869Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=10226 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:32:58.869Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=10228 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:33:27.913Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=10314 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:33:27.913Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=10315 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:33:27.914Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=10317 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:33:47.944Z","source":"agent","category":"probe","title":"$ su z -c cat -- /home/z/my-project/decompiled/vmos-jadx/sources/Epic/ProtectApp.java","detail":"pid=10368 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:37:44.239Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=10649 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:37:44.239Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=10650 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:37:44.239Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=10652 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:37:46.247Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=10661 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:37:46.248Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=10662 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:37:46.248Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=10664 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:38:33.309Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=10720 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:38:33.309Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=10721 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:38:33.310Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=10723 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:38:33.310Z","source":"agent","category":"probe","title":"$ rg --files --iglob !node_modules --iglob !skills --follow /home/z/my-project","detail":"pid=10725 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:40:17.459Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=10885 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:40:17.460Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=10886 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:40:17.460Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=10888 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:40:47.504Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=10962 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:40:47.504Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=10963 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:40:47.504Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=10965 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:40:48.493Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=10968 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:40:48.493Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=10969 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:40:48.493Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=10971 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:40:48.493Z","source":"agent","category":"probe","title":"$ python3 scripts/vmos_rom_decrypt_all.py","detail":"pid=10972 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:41:24.530Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=11013 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:41:24.531Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=11014 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:41:24.531Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=11016 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:41:25.533Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=11020 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:41:25.533Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=11021 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:41:25.533Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=11023 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:41:25.533Z","source":"agent","category":"probe","title":"$ /home/z/.venv/bin/python3 /home/z/.venv/bin/pip install py7zr","detail":"pid=11024 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:41:25.533Z","source":"agent","category":"probe","title":"$ tail -1","detail":"pid=11025 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:43:26.701Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=11156 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:43:26.701Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=11157 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:43:26.701Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=11159 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:43:26.701Z","source":"agent","category":"probe","title":"$ /home/z/.venv/bin/python3 /home/z/.venv/bin/pip install py7zr --quiet --no-cache-dir","detail":"pid=11160 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:43:26.701Z","source":"agent","category":"probe","title":"$ tail -2","detail":"pid=11161 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:48:32.103Z","source":"agent","category":"probe","title":"$ /app/.venv/bin/python main.py","detail":"pid=11491 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:48:37.109Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=11528 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:48:37.110Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=11529 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:48:37.110Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=11531 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:48:37.110Z","source":"agent","category":"probe","title":"$ timeout 240 pip install py7zr","detail":"pid=11532 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:48:37.110Z","source":"agent","category":"probe","title":"$ tail -4","detail":"pid=11533 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:48:37.110Z","source":"agent","category":"probe","title":"$ /home/z/.venv/bin/python3 /home/z/.venv/bin/pip install py7zr","detail":"pid=11534 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:50:47.287Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=11668 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:50:47.288Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=11669 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:50:47.288Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=11675 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:52:09.365Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=11772 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:52:09.365Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=11773 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:52:09.365Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=11775 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:52:09.365Z","source":"agent","category":"probe","title":"$ python3 -c import py7zr for f in ('rom.img', 'rom1.img'): with py7zr.SevenZipFile(f) as z: print(f'=== {f} ===') for i in z.list(): print(f' {i.filena","detail":"pid=11776 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T15:59:54.934Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=12265 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:59:54.934Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=12266 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T15:59:54.934Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=12268 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:01:36.047Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=12403 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:01:36.047Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=12404 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:01:36.047Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=12406 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:01:46.063Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=12432 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:01:46.063Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=12433 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:01:46.063Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=12435 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:01:46.063Z","source":"agent","category":"probe","title":"$ timeout 280 python3 -c import py7zr with py7zr.SevenZipFile('rom.img') as z: entries = z.list() files = [e for e in entries if not e.is_directory] pri","detail":"pid=12436 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:01:46.063Z","source":"agent","category":"probe","title":"$ head -50","detail":"pid=12437 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:01:46.063Z","source":"agent","category":"probe","title":"$ python3 -c import py7zr with py7zr.SevenZipFile('rom.img') as z: entries = z.list() files = [e for e in entries if not e.is_directory] print(f'rom.img","detail":"pid=12438 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:02:00.087Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=12458 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:02:00.088Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=12459 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:02:00.088Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=12461 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:02:00.088Z","source":"agent","category":"probe","title":"$ timeout 280 python3 -c import py7zr with py7zr.SevenZipFile('rom1.img') as z: entries = z.list() files = [e for e in entries if not e.is_directory] di","detail":"pid=12463 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:02:00.088Z","source":"agent","category":"probe","title":"$ head -70","detail":"pid=12464 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:02:00.088Z","source":"agent","category":"probe","title":"$ python3 -c import py7zr with py7zr.SevenZipFile('rom1.img') as z: entries = z.list() files = [e for e in entries if not e.is_directory] dirs = [e for ","detail":"pid=12465 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:02:20.115Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=12487 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:02:20.116Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=12488 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:02:20.116Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=12490 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:02:52.155Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=12562 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:02:52.155Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=12563 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:02:52.155Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=12565 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:03:22.187Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=12635 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:03:22.187Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=12636 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:03:22.188Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=12638 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:03:23.191Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=12641 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:03:23.192Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=12642 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:03:23.192Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=12644 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:03:23.192Z","source":"agent","category":"probe","title":"$ timeout 550 python3 scripts/vmos_rom_extract.py","detail":"pid=12645 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:03:23.192Z","source":"agent","category":"probe","title":"$ head -20","detail":"pid=12646 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:03:23.192Z","source":"agent","category":"probe","title":"$ python3 scripts/vmos_rom_extract.py","detail":"pid=12647 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:03:54.221Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=12700 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:03:54.221Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=12701 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:03:54.221Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=12703 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:03:54.221Z","source":"agent","category":"probe","title":"$ unzip -o -q magisk.zip -d /tmp/rom12/x/magisk/","detail":"pid=12705 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:03:54.221Z","source":"agent","category":"probe","title":"$ head -3","detail":"pid=12706 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:12.401Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=12970 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:12.402Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=12971 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:12.402Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=12973 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:13.426Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=12977 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:13.426Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=12978 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:13.426Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=12980 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:13.426Z","source":"agent","category":"probe","title":"$ timeout 550 tools/jadx/bin/jadx --no-res --decompilation-mode simple --threads-count 2 -d /tmp/rom12/x/vmservice-jadx /tmp/rom12/x/fs/system/priv-app/","detail":"pid=12981 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:13.426Z","source":"agent","category":"probe","title":"$ tail -6","detail":"pid=12982 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:13.426Z","source":"agent","category":"probe","title":"$ java -XX:+IgnoreUnrecognizedVMOptions -Xms256M -XX:MaxRAMPercentage=70.0 -XX:ParallelGCThreads=3 -Djdk.util.zip.disableZip64ExtraFieldValidation=true ","detail":"pid=12983 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:31.429Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13049 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:31.430Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13050 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:31.430Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=13052 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:54.446Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13111 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:54.446Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13112 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:54.446Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=13114 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:55.454Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=13118 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:55.454Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=13119 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:55.454Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=13121 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:55.455Z","source":"agent","category":"probe","title":"$ timeout 550 tools/jadx/bin/jadx --no-res --decompilation-mode simple --threads-count 1 -d /tmp/rom12/x/groovy-jadx uploads/groovy_shell.apk","detail":"pid=13122 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:55.455Z","source":"agent","category":"probe","title":"$ tail -3","detail":"pid=13123 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:06:55.455Z","source":"agent","category":"probe","title":"$ java -XX:+IgnoreUnrecognizedVMOptions -Xms256M -XX:MaxRAMPercentage=70.0 -XX:ParallelGCThreads=3 -Djdk.util.zip.disableZip64ExtraFieldValidation=true ","detail":"pid=13124 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:07:17.473Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=13200 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:07:17.473Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=13201 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:08:48.596Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13364 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:08:48.596Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13365 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:08:48.596Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=13367 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:09:35.646Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13465 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:09:35.646Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13467 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:09:35.647Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=13469 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:09:35.647Z","source":"agent","category":"probe","title":"$ [git]","detail":"pid=13470 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:10:08.690Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=13533 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:10:08.690Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=13534 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:10:08.690Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=13536 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:10:08.690Z","source":"agent","category":"probe","title":"$ timeout 120 python3 -c import py7zr with py7zr.SevenZipFile('/tmp/rom12/dec/rom1.img') as z: entries = [e.filename for e in z.list()] hw = [n for n in","detail":"pid=13541 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:10:08.691Z","source":"agent","category":"probe","title":"$ head -40","detail":"pid=13542 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:10:08.691Z","source":"agent","category":"probe","title":"$ python3 -c import py7zr with py7zr.SevenZipFile('/tmp/rom12/dec/rom1.img') as z: entries = [e.filename for e in z.list()] hw = [n for n in entries if ","detail":"pid=13543 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:10:47.751Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=13590 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:10:47.751Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=13591 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:10:47.751Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=13593 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:10:47.751Z","source":"agent","category":"probe","title":"$ unzip -o -q /home/z/my-project/uploads/虚拟大师_3.2.67.apk Epic.vm assets/EPIC/Y1bHf.Epic","detail":"pid=13595 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:10:57.768Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=13615 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:10:57.769Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=13616 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:10:57.769Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=13618 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:10:57.769Z","source":"agent","category":"probe","title":"$ python3 -c data = open('Epic.vm','rb').read() d = bytes(b ^ 0x1F for b in data) open('Epic.vm.dec','wb').write(d) print('前 64 字节:', d[:64]) print('ASC","detail":"pid=13620 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:12:30.878Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13761 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:12:30.878Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13762 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:12:30.878Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=13764 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:12:34.882Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13777 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:12:34.882Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13778 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:12:34.882Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=13780 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:12:37.884Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13791 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:12:37.884Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13792 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:12:37.884Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=13794 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:12:57.912Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13834 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:12:57.912Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13835 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:12:57.912Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=13837 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:13:23.953Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13910 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:13:23.953Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=13911 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:13:23.953Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=13913 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:13:27.961Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=13934 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:13:27.961Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=13935 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:13:27.961Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=13937 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:15:52.134Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=14085 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:15:52.134Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=14086 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:15:52.134Z","source":"agent","category":"probe","title":"$ rg --files --iglob !node_modules --iglob !skills --follow /home/z/my-project","detail":"pid=14088 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:15:52.134Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=14089 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:16:11.160Z","source":"agent","category":"probe","title":"$ rg --files --iglob !node_modules --iglob !skills --follow /home/z/my-project","detail":"pid=14120 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:20:00.639Z","source":"agent","category":"build","title":"启动反编译作业 mwf6n9ie-589d","detail":"unzip-list: unzip -l /home/z/my-project/uploads/user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip"}
+{"ts":"2026-11-13T16:21:19.736Z","source":"terminal","category":"note","title":"$ ls -R \"/home/z/my-project/decompiled/groovy-shell-jadx\" | head -50","detail":"exit=0 · 19ms"}
+{"ts":"2026-11-13T16:21:58.610Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=14836 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:21:58.611Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=14839 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:21:58.611Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=14842 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:02.624Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=14861 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:02.624Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=14862 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:02.624Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=14864 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:02.624Z","source":"agent","category":"probe","title":"$ node scripts/gen_report_v2.js","detail":"pid=14866 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:08.631Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=14895 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:08.631Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=14896 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:08.632Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=14898 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:08.632Z","source":"agent","category":"probe","title":"$ python3 skills/docx/scripts/postcheck.py download/虚拟大师_3.2.67_逆向分析报告_v2.docx","detail":"pid=14901 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:08.633Z","source":"agent","category":"probe","title":"$ tail -30","detail":"pid=14902 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:23.650Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=14922 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:23.651Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=14923 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:23.651Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=14925 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:23.651Z","source":"agent","category":"probe","title":"$ python3 skills/docx/scripts/add_toc_placeholders.py download/虚拟大师_3.2.67_逆向分析报告_v2.docx --auto","detail":"pid=14935 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:23.651Z","source":"agent","category":"probe","title":"$ tail -2","detail":"pid=14936 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:34.664Z","source":"agent","category":"probe","title":"$ su z -c tee -- /home/z/my-project/scripts/fix_docx_footers.py","detail":"pid=14955 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:49.683Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=14984 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:49.683Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=14985 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:49.683Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=14987 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:22:58.693Z","source":"agent","category":"probe","title":"$ /app/.venv/bin/python main.py","detail":"pid=15005 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:05.698Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=15021 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:05.698Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=15022 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:05.698Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=15024 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:21.715Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=15049 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:21.716Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=15050 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:21.716Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=15052 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:38.734Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=15109 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:38.734Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=15110 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:38.734Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=15112 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:38.734Z","source":"agent","category":"probe","title":"$ python3 skills/docx/scripts/add_toc_placeholders.py download/虚拟大师_3.2.67_逆向分析报告_v2.docx --auto","detail":"pid=15120 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:38.734Z","source":"agent","category":"probe","title":"$ tail -1","detail":"pid=15121 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:43.739Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=15131 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:43.739Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=15132 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:43.739Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=15134 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:44.745Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=15137 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:44.747Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=15138 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:44.747Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=15140 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:44.747Z","source":"agent","category":"probe","title":"$ timeout 180 soffice --headless --convert-to pdf 虚拟大师_3.2.67_逆向分析报告_v2.docx","detail":"pid=15142 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:44.747Z","source":"agent","category":"probe","title":"$ tail -1","detail":"pid=15143 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:44.747Z","source":"agent","category":"probe","title":"$ /usr/lib/libreoffice/program/oosplash --headless --convert-to pdf 虚拟大师_3.2.67_逆向分析报告_v2.docx","detail":"pid=15144 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:23:44.747Z","source":"agent","category":"probe","title":"$ [soffice.bin]","detail":"pid=15159 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:24:21.784Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=15277 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:24:21.785Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=15278 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:24:21.785Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=15280 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:17.932Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=15484 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:17.932Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=15485 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:17.932Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=15487 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:31.949Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=15513 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:31.949Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=15514 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:31.949Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=15516 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:31.949Z","source":"agent","category":"probe","title":"$ python3 skills/docx/scripts/add_toc_placeholders.py download/虚拟大师_3.2.67_逆向分析报告_v2.docx --auto","detail":"pid=15524 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:31.949Z","source":"agent","category":"probe","title":"$ tail -1","detail":"pid=15525 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:36.957Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=15536 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:36.958Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=15537 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:36.958Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=15539 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:42.956Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=15561 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:42.956Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=15562 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:42.956Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=15564 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:42.956Z","source":"agent","category":"probe","title":"$ python3 skills/docx/scripts/postcheck.py download/虚拟大师_3.2.67_逆向分析报告_v2.docx","detail":"pid=15569 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:42.956Z","source":"agent","category":"probe","title":"$ tail -4","detail":"pid=15570 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:52.964Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=15581 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:52.965Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=15582 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:26:52.965Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=15584 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:27:15.005Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=15618 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:27:15.005Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=15619 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:27:15.006Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=15621 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:27:15.006Z","source":"agent","category":"probe","title":"$ timeout 180 soffice --headless --convert-to pdf 虚拟大师_3.2.67_逆向分析报告_v2.docx","detail":"pid=15623 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:27:15.006Z","source":"agent","category":"probe","title":"$ /usr/lib/libreoffice/program/oosplash --headless --convert-to pdf 虚拟大师_3.2.67_逆向分析报告_v2.docx","detail":"pid=15624 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:27:15.006Z","source":"agent","category":"probe","title":"$ /usr/lib/libreoffice/program/soffice.bin --headless --convert-to pdf 虚拟大师_3.2.67_逆向分析报告_v2.docx","detail":"pid=15640 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:28:06.089Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=15799 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:28:06.090Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=15800 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:28:06.090Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=15802 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:28:06.090Z","source":"agent","category":"probe","title":"$ python3 -","detail":"pid=15803 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:29:03.172Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=15906 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:29:03.172Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=15907 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:29:03.172Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=15909 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:29:03.172Z","source":"agent","category":"probe","title":"$ git add -A","detail":"pid=15910 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:53:46.916Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=17524 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:53:46.917Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=17525 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:53:46.917Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=17527 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:53:46.917Z","source":"agent","category":"probe","title":"$ du -sh /home/z/my-project/Caddyfile /home/z/my-project/agent-log.jsonl /home/z/my-project/analysis /home/z/my-project/apk-jobs /home/z/my-project/bun.","detail":"pid=17530 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:53:46.917Z","source":"agent","category":"probe","title":"$ sort -rh","detail":"pid=17531 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:53:46.917Z","source":"agent","category":"probe","title":"$ head -20","detail":"pid=17532 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:55:30.094Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=17660 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:55:30.095Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=17661 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:55:30.095Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=17663 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:55:30.095Z","source":"agent","category":"probe","title":"$ unzip -l magisk_inner.zip","detail":"pid=17707 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:55:30.095Z","source":"agent","category":"probe","title":"$ head -30","detail":"pid=17708 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:56:01.095Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=17746 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:56:01.095Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=17747 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:56:01.095Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=17749 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:56:01.095Z","source":"agent","category":"probe","title":"$ unzip -l /tmp/magisk_inner.zip","detail":"pid=17763 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:56:01.095Z","source":"agent","category":"probe","title":"$ head -35","detail":"pid=17764 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:56:52.172Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=17846 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:56:52.172Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=17847 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:56:52.172Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=17849 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:56:52.172Z","source":"agent","category":"probe","title":"$ python3 scripts/rom_zip_inspect.py","detail":"pid=17850 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:56:52.172Z","source":"agent","category":"probe","title":"$ head -60","detail":"pid=17851 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:57:29.241Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=17889 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:57:29.242Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=17890 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:57:29.242Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=17892 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:58:27.291Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=18010 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:58:27.292Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=18011 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:58:27.292Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=18013 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:58:27.292Z","source":"agent","category":"probe","title":"$ unzip -o -q uploads/虚拟大师_3.2.67.apk lib/arm64-v8a/* -d analysis/native/","detail":"pid=18021 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:58:27.292Z","source":"agent","category":"probe","title":"$ tail -2","detail":"pid=18022 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:58:50.345Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=18055 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:58:50.345Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=18056 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T16:58:50.345Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=18058 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T16:58:50.345Z","source":"agent","category":"probe","title":"$ unzip -o -q uploads/虚拟大师_3.2.67.apk assets/plugins/*.zip assets/EPIC/* assets/*.dex -d analysis/plugins_zips/","detail":"pid=18060 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:02:12.560Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=18350 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:02:12.560Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=18351 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:02:12.560Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=18354 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:02:45.602Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=18464 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:02:45.602Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=18465 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:02:45.602Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=18467 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:02:45.602Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=18468 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:02:45.602Z","source":"agent","category":"probe","title":"$ head -120","detail":"pid=18469 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:02:45.603Z","source":"agent","category":"probe","title":"$ curl -sL --max-time 25 https://raw.githubusercontent.com/Flytreels/vpro-romedit/master/README.md","detail":"pid=18473 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:02:45.603Z","source":"agent","category":"probe","title":"$ head -60","detail":"pid=18474 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:02:46.605Z","source":"agent","category":"probe","title":"$ curl -sL --max-time 25 https://raw.githubusercontent.com/you2032/Pure-ROM/main/README.md","detail":"pid=18478 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:02:46.605Z","source":"agent","category":"probe","title":"$ head -60","detail":"pid=18479 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:03:11.636Z","source":"agent","category":"probe","title":"$ curl -sL --max-time 25 https://raw.githubusercontent.com/Yau08/VMOS-Pro/main/README.md","detail":"pid=18510 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:03:11.637Z","source":"agent","category":"probe","title":"$ head -60","detail":"pid=18511 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:03:24.658Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=18533 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:03:24.658Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=18534 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:03:24.658Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=18536 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:03:24.658Z","source":"agent","category":"probe","title":"$ curl -sL --max-time 25 https://api.github.com/repos/Flytreels/vpro-romedit","detail":"pid=18537 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:03:24.658Z","source":"agent","category":"probe","title":"$ python3 -c import json,sys; d=json.load(sys.stdin); print(d.get('full_name'), d.get('default_branch'), 'size:', d.get('size'), 'desc:', d.get('descrip","detail":"pid=18538 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:03:25.660Z","source":"agent","category":"probe","title":"$ curl -sL --max-time 25 https://api.github.com/repos/you2032/Pure-ROM/git/trees/master?recursive=1","detail":"pid=18545 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:03:25.661Z","source":"agent","category":"probe","title":"$ python3 -c import json,sys d=json.load(sys.stdin) for t in d.get('tree', [])[:60]: print(t['path'], t.get('size',''))","detail":"pid=18546 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:04:04.701Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=18588 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:04:04.701Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=18589 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:04:04.701Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=18591 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:04:11.710Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=18647 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:04:11.711Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=18648 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:04:11.711Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=18650 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:04:11.711Z","source":"agent","category":"probe","title":"$ git add -A","detail":"pid=18651 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:04:13.714Z","source":"agent","category":"probe","title":"$ git commit -m ce05def7-e66a-457e-9743-3bf8a4a3eebc","detail":"pid=18669 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:05:30.821Z","source":"agent","category":"probe","title":"$ rg --files --iglob !node_modules --iglob !skills --follow /home/z/my-project","detail":"pid=18758 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:07:57.968Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=18939 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:07:57.968Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=18940 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:07:57.968Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=18942 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:09:01.059Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=19017 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:09:01.060Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=19018 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:09:01.060Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=19020 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:09:39.114Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=19081 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:09:39.115Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=19082 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:09:39.115Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=19084 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:09:40.113Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=19088 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:09:40.114Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=19089 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:09:40.114Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=19091 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:09:40.114Z","source":"agent","category":"probe","title":"$ [python3]","detail":"pid=19092 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:09:41.216Z","source":"agent","category":"probe","title":"$ java -XX:+IgnoreUnrecognizedVMOptions -Xms256M -XX:MaxRAMPercentage=70.0 -XX:ParallelGCThreads=3 -Djdk.util.zip.disableZip64ExtraFieldValidation=true ","detail":"pid=19095 · user=z · elapsed=00:01"}
+{"ts":"2026-11-13T17:09:41.224Z","source":"agent","category":"probe","title":"$ tail -6","detail":"pid=19096 · user=z · elapsed=00:01"}
+{"ts":"2026-11-13T17:10:27.144Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=19271 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:10:27.144Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=19272 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:10:27.144Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=19274 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:10:27.144Z","source":"agent","category":"probe","title":"$ rg -l \"e=x|\"c=v2|e=x&c=v2|\\?e=x .","detail":"pid=19277 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:10:27.144Z","source":"agent","category":"probe","title":"$ head","detail":"pid=19278 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:10:28.146Z","source":"agent","category":"probe","title":"$ rg -l magisk_uri|su_uri|xposed_uri|rom_uri|rom\\.img|superuser\\.zip|magisk\\.zip|xposed\\.zip .","detail":"pid=19283 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:10:28.146Z","source":"agent","category":"probe","title":"$ head -15","detail":"pid=19284 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:10:49.183Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=19346 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:10:49.183Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=19347 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:10:49.183Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=19349 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:10:49.184Z","source":"agent","category":"probe","title":"$ rg -n MagiskTask .","detail":"pid=19353 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:10:49.184Z","source":"agent","category":"probe","title":"$ head","detail":"pid=19354 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:11:53.255Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=19467 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:11:53.256Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=19468 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:11:53.256Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=19470 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:11:53.256Z","source":"agent","category":"probe","title":"$ python3 scripts/stringfog_decrypt.py","detail":"pid=19471 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:12:22.290Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=19538 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:12:22.290Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=19539 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:12:22.290Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=19541 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:12:35.343Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=19615 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:12:35.343Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=19616 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:12:35.343Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=19618 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:12:53.329Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=19686 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:12:53.329Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=19687 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:12:53.329Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=19689 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:03.341Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=19703 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:03.341Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=19704 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:03.341Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=19706 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:07.341Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=19753 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:07.341Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=19754 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:07.341Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=19756 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:31.365Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=19844 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:31.366Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=19845 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:31.366Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=19847 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:31.366Z","source":"agent","category":"probe","title":"$ curl -sIL --max-time 30 https://repo1.maven.org/maven2/com/android/tools/smali/baksmali/3.0.9/baksmali-3.0.9-fat.jar","detail":"pid=19851 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:31.366Z","source":"agent","category":"probe","title":"$ head -8","detail":"pid=19852 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:37.371Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=19867 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:37.372Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=19868 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:37.372Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=19870 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:37.372Z","source":"agent","category":"probe","title":"$ curl -sL --max-time 30 https://repo1.maven.org/maven2/com/android/tools/smali/baksmali/maven-metadata.xml","detail":"pid=19871 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:37.372Z","source":"agent","category":"probe","title":"$ rg -o <version>[^<]+</version>|<latest>[^<]+</latest>|<release>[^<]+</release>","detail":"pid=19872 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:37.372Z","source":"agent","category":"probe","title":"$ head","detail":"pid=19873 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:41.376Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=19884 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:41.377Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=19885 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:41.377Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=19887 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:41.377Z","source":"agent","category":"probe","title":"$ curl -sL --max-time 30 https://repo1.maven.org/maven2/com/android/tools/smali/baksmali/maven-metadata.xml","detail":"pid=19888 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:41.377Z","source":"agent","category":"probe","title":"$ head -30","detail":"pid=19889 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:47.387Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=19902 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:47.387Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=19903 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:47.387Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=19905 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:47.387Z","source":"agent","category":"probe","title":"$ curl -sL --max-time 30 https://repo1.maven.org/maven2/org/smali/baksmali/maven-metadata.xml","detail":"pid=19906 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:47.387Z","source":"agent","category":"probe","title":"$ rg -o <latest>[^<]+</latest>|<version>[^<]+</version>","detail":"pid=19907 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:47.388Z","source":"agent","category":"probe","title":"$ tail -5","detail":"pid=19908 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:48.395Z","source":"agent","category":"probe","title":"$ curl -sL --max-time 90 -o baksmali.jar https://repo1.maven.org/maven2/org/smali/baksmali/2.5.2/baksmali-2.5.2-fat.jar","detail":"pid=19911 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:52.397Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=19924 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:52.397Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=19925 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:52.397Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=19927 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:52.397Z","source":"agent","category":"probe","title":"$ curl -sL --max-time 30 https://repo1.maven.org/maven2/org/smali/baksmali/","detail":"pid=19929 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:52.397Z","source":"agent","category":"probe","title":"$ rg -o href=\"[^\"]+\"","detail":"pid=19930 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:52.397Z","source":"agent","category":"probe","title":"$ head -12","detail":"pid=19931 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:57.404Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=19943 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:57.404Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=19944 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:57.404Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=19946 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:57.404Z","source":"agent","category":"probe","title":"$ curl -sL --max-time 30 https://repo1.maven.org/maven2/org/smali/baksmali/","detail":"pid=19947 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:57.405Z","source":"agent","category":"probe","title":"$ rg -o href=\"[0-9][^\"]*/\"","detail":"pid=19948 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:13:57.405Z","source":"agent","category":"probe","title":"$ tail -6","detail":"pid=19949 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:14:00.410Z","source":"agent","category":"probe","title":"$ curl -sL --max-time 30 https://repo1.maven.org/maven2/org/smali/baksmali/2.5.0/","detail":"pid=19954 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:14:00.410Z","source":"agent","category":"probe","title":"$ rg -o href=\"[^\"]+\\.jar\"","detail":"pid=19955 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:14:08.424Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=19970 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:14:08.424Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=19971 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:14:08.424Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=19973 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:14:08.424Z","source":"agent","category":"probe","title":"$ java -XX:+IgnoreUnrecognizedVMOptions -Xms256M -XX:MaxRAMPercentage=70.0 -XX:ParallelGCThreads=3 -Djdk.util.zip.disableZip64ExtraFieldValidation=true ","detail":"pid=19974 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:14:08.424Z","source":"agent","category":"probe","title":"$ tail -3","detail":"pid=19975 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:14:15.457Z","source":"agent","category":"probe","title":"$ java -XX:+IgnoreUnrecognizedVMOptions -Xms256M -XX:MaxRAMPercentage=70.0 -XX:ParallelGCThreads=3 -Djdk.util.zip.disableZip64ExtraFieldValidation=true ","detail":"pid=20022 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:14:15.458Z","source":"agent","category":"probe","title":"$ tail -2","detail":"pid=20023 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:16:01.582Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=20314 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:16:01.582Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=20315 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:16:01.582Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=20317 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:16:01.582Z","source":"agent","category":"probe","title":"$ java -XX:+IgnoreUnrecognizedVMOptions -Xms256M -XX:MaxRAMPercentage=70.0 -XX:ParallelGCThreads=3 -Djdk.util.zip.disableZip64ExtraFieldValidation=true ","detail":"pid=20322 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:16:01.582Z","source":"agent","category":"probe","title":"$ tail -1","detail":"pid=20323 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:18:51.767Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=20555 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:18:51.768Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=20556 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:18:51.768Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=20558 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:20:45.965Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=20684 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:20:45.965Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=20685 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:20:45.965Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=20687 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:20:46.967Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=20690 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:20:46.967Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=20691 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:20:46.967Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=20693 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:20:46.967Z","source":"agent","category":"probe","title":"$ python3 scripts/rom_keystream_derive.py","detail":"pid=20694 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:21:27.028Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=20740 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:21:27.028Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=20741 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:21:27.028Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=20743 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:21:27.028Z","source":"agent","category":"probe","title":"$ python3 -c import py7zr; print('py7zr', py7zr.__version__)","detail":"pid=20745 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:21:38.086Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=20772 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:21:38.086Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=20773 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:21:38.086Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=20775 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:21:38.087Z","source":"agent","category":"probe","title":"$ python3 scripts/rom_full_decrypt.py rom.img","detail":"pid=20778 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:22:07.106Z","source":"agent","category":"probe","title":"$ python3 scripts/rom_full_decrypt.py rom1.img","detail":"pid=20808 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:23:20.194Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=20912 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:23:20.194Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=20913 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:23:20.194Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=20915 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:23:20.194Z","source":"agent","category":"probe","title":"$ python3 -c import py7zr targets = ['fs/system/etc/init/hw/init.rc', 'fs/system/build.prop', 'fs/init.environ.rc'] with py7zr.SevenZipFile('extracted/r","detail":"pid=20916 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:24:38.260Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=21035 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:24:38.260Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=21036 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:24:38.260Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=21038 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:24:40.259Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=21043 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:24:40.259Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=21044 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:24:40.259Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=21046 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:24:50.267Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=21073 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:24:50.267Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=21074 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:24:50.267Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=21076 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:25:02.284Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=21123 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:25:02.284Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=21124 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:25:02.284Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=21126 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:25:37.319Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=21202 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:25:37.319Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=21203 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:25:37.319Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=21205 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:25:38.325Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=21209 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:25:38.325Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=21210 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:25:38.325Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=21212 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:25:38.325Z","source":"agent","category":"probe","title":"$ bun add docx","detail":"pid=21213 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:25:38.325Z","source":"agent","category":"probe","title":"$ tail -3","detail":"pid=21214 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:25:39.331Z","source":"agent","category":"probe","title":"$ node /home/z/my-project/.next/dev/build/postcss.js 40675","detail":"pid=21226 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:25:40.342Z","source":"agent","category":"probe","title":"$ node /home/z/my-project/.next/dev/build/postcss.js 41351","detail":"pid=21248 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:29:31.615Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=21560 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:29:31.615Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=21561 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:29:31.615Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=21563 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:29:31.615Z","source":"agent","category":"probe","title":"$ python3 /home/z/my-project/skills/docx/scripts/postcheck.py /home/z/my-project/download/VirtualMaster逆向分析与AEmulator迁移方案.docx","detail":"pid=21573 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:29:31.615Z","source":"agent","category":"probe","title":"$ tail -30","detail":"pid=21574 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:30:10.687Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=21677 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:30:10.687Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=21678 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:30:10.687Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=21680 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:30:10.688Z","source":"agent","category":"probe","title":"$ python3 /home/z/my-project/skills/docx/scripts/postcheck.py /home/z/my-project/download/VirtualMaster逆向分析与AEmulator迁移方案.docx","detail":"pid=21691 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:30:10.688Z","source":"agent","category":"probe","title":"$ tail -15","detail":"pid=21692 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:30:17.687Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=21704 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:30:17.688Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=21705 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:30:17.688Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=21707 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:30:17.688Z","source":"agent","category":"probe","title":"$ pdftoppm -r 60 -jpeg -jpegopt quality=60 /tmp/render/VirtualMaster逆向分析与AEmulator迁移方案.pdf /tmp/render/pages/page","detail":"pid=21743 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:31:05.751Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=21849 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:31:05.752Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=21850 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:31:05.752Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=21852 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:31:23.774Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=21892 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:31:23.775Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=21893 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:31:23.775Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=21895 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:32:50.986Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=22069 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:32:50.986Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=22070 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:32:50.986Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=22072 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:32:50.986Z","source":"agent","category":"probe","title":"$ git add -A","detail":"pid=22073 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:32:51.995Z","source":"agent","category":"probe","title":"$ git commit -m 004dd1be-ebba-40e7-8c43-65b8533ec054","detail":"pid=22091 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:32:51.996Z","source":"agent","category":"probe","title":"$ /usr/lib/git-core/git maintenance run --auto --no-quiet --detach","detail":"pid=22123 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:32:51.996Z","source":"agent","category":"probe","title":"$ /usr/lib/git-core/git gc --auto --no-quiet --no-detach","detail":"pid=22124 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:32:51.996Z","source":"agent","category":"probe","title":"$ /usr/lib/git-core/git repack -d -l --no-write-bitmap-index","detail":"pid=22127 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:32:51.996Z","source":"agent","category":"probe","title":"$ /usr/lib/git-core/git pack-objects --local --delta-base-offset .git/objects/pack/.tmp-22127-pack --keep-true-parents --honor-pack-keep --non-empty --a","detail":"pid=22128 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:37:04.281Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=22413 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:37:04.281Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=22414 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:37:04.281Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=22416 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:37:08.286Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=22437 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:37:08.286Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=22438 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:37:08.286Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=22440 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:37:08.286Z","source":"agent","category":"probe","title":"$ timeout 120 git clone --depth 1 https://ghfast.top/https://github.com/uxazu/AEmulator.git aemulator-src","detail":"pid=22441 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:37:08.286Z","source":"agent","category":"probe","title":"$ tail -5","detail":"pid=22442 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:37:08.286Z","source":"agent","category":"probe","title":"$ git clone --depth 1 https://ghfast.top/https://github.com/uxazu/AEmulator.git aemulator-src","detail":"pid=22443 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:37:08.286Z","source":"agent","category":"probe","title":"$ /usr/lib/git-core/git remote-https origin https://ghfast.top/https://github.com/uxazu/AEmulator.git","detail":"pid=22444 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:37:08.287Z","source":"agent","category":"probe","title":"$ /usr/lib/git-core/git-remote-https origin https://ghfast.top/https://github.com/uxazu/AEmulator.git","detail":"pid=22445 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:37:14.289Z","source":"agent","category":"probe","title":"$ /usr/lib/git-core/git --shallow-file /home/z/my-project/aemulator-src/.git/shallow.lock index-pack --stdin --fix-thin --keep=fetch-pack 22443 on c-6af","detail":"pid=22454 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:38:14.347Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=22533 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:38:14.347Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=22534 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:38:14.347Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=22536 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:38:53.391Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=22801 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:38:53.392Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=22802 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:38:53.392Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=22804 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:39:15.423Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=22833 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:39:15.423Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=22834 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:39:15.423Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=22836 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:39:56.488Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=22898 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:39:56.488Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=22899 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:39:56.488Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=22901 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:41:02.562Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=23019 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:41:02.562Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=23020 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:41:02.562Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=23022 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:41:02.562Z","source":"agent","category":"probe","title":"$ timeout 15 curl -sI https://maven.google.com/ -o /dev/null -w %{http_code}\\n","detail":"pid=23029 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:41:02.563Z","source":"agent","category":"probe","title":"$ curl -sI https://maven.google.com/ -o /dev/null -w %{http_code}\\n","detail":"pid=23030 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:41:37.613Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=23074 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:41:37.613Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=23075 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:41:37.613Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=23077 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:41:37.613Z","source":"agent","category":"probe","title":"$ du -sh analysis decompiled extracted apk-jobs uploads upload download tools node_modules aemulator-src","detail":"pid=23078 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:41:37.613Z","source":"agent","category":"probe","title":"$ sort -rh","detail":"pid=23079 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:41:37.614Z","source":"agent","category":"probe","title":"$ head -12","detail":"pid=23080 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:41:39.609Z","source":"agent","category":"probe","title":"$ timeout 12 curl -sI https://services.gradle.org/distributions/gradle-8.14.2-bin.zip -o /dev/null -w gradle dist: %{http_code}\\n","detail":"pid=23087 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:41:39.609Z","source":"agent","category":"probe","title":"$ curl -sI https://services.gradle.org/distributions/gradle-8.14.2-bin.zip -o /dev/null -w gradle dist: %{http_code}\\n","detail":"pid=23088 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:46:55.027Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=23492 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:46:55.027Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=23493 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:46:55.027Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=23495 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:49:23.208Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=23701 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:49:23.208Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=23702 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:50:35.281Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=23796 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:50:35.281Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=23797 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:50:35.281Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=23799 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:52:23.451Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=23933 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:52:23.452Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=23934 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:52:23.452Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=23936 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:52:40.476Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=23993 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:52:40.477Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=23994 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:52:40.477Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=23996 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:52:46.484Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=24023 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:52:46.485Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=24024 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:52:46.485Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=24026 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:53:25.522Z","source":"agent","category":"probe","title":"$ su z -c cat -- /home/z/my-project/aemulator-src/app/src/main/java/app/aemu/ui/VmActivity.kt","detail":"pid=24187 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:54:53.649Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=24350 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:54:53.649Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=24351 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:54:53.649Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=24353 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:03.739Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=24466 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:03.739Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=24467 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:03.739Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=24469 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:03.739Z","source":"agent","category":"probe","title":"$ timeout 12 curl -sL -o /dev/null -w mavenCentral: %{http_code}\\n https://repo1.maven.org/maven2/org/tukaani/xz/1.10/xz-1.10.pom","detail":"pid=24472 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:03.739Z","source":"agent","category":"probe","title":"$ curl -sL -o /dev/null -w mavenCentral: %{http_code}\\n https://repo1.maven.org/maven2/org/tukaani/xz/1.10/xz-1.10.pom","detail":"pid=24473 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:04.739Z","source":"agent","category":"probe","title":"$ timeout 20 curl -sL -o /dev/null -w gradle dist (follow): %{http_code}\\n https://services.gradle.org/distributions/gradle-8.14.2-bin.zip","detail":"pid=24477 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:04.740Z","source":"agent","category":"probe","title":"$ curl -sL -o /dev/null -w gradle dist (follow): %{http_code}\\n https://services.gradle.org/distributions/gradle-8.14.2-bin.zip","detail":"pid=24478 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:31.764Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=24516 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:31.764Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=24517 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:31.764Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=24519 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:31.764Z","source":"agent","category":"probe","title":"$ timeout 25 curl -sL -o /dev/null -w gradle.org: %{http_code} (%{url_effective})\\n https://downloads.gradle.org/distributions/gradle-8.14.2-bin.zip","detail":"pid=24520 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:31.764Z","source":"agent","category":"probe","title":"$ head -2","detail":"pid=24521 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:31.764Z","source":"agent","category":"probe","title":"$ curl -sL -o /dev/null -w gradle.org: %{http_code} (%{url_effective})\\n https://downloads.gradle.org/distributions/gradle-8.14.2-bin.zip","detail":"pid=24522 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:56.804Z","source":"agent","category":"probe","title":"$ timeout 15 curl -sI -o /dev/null -w aliyun mirror: %{http_code}\\n https://mirrors.aliyun.com/gradle/gradle-8.14.2-bin.zip","detail":"pid=24556 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:56:56.804Z","source":"agent","category":"probe","title":"$ curl -sI -o /dev/null -w aliyun mirror: %{http_code}\\n https://mirrors.aliyun.com/gradle/gradle-8.14.2-bin.zip","detail":"pid=24557 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:44.884Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=24627 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:44.884Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=24628 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:44.884Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=24630 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:45.888Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=24634 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:45.888Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=24635 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:45.888Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=24637 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:45.888Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=24638 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:45.888Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=24639 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:45.888Z","source":"agent","category":"probe","title":"$ curl -sL -o /tmp/cmdtools.zip https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip","detail":"pid=24640 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:45.888Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=24642 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:45.888Z","source":"agent","category":"probe","title":"$ curl -sL -o gradle-8.14.2-bin.zip https://mirrors.cloud.tencent.com/gradle/gradle-8.14.2-bin.zip","detail":"pid=24643 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:47.997Z","source":"agent","category":"probe","title":"$ unzip -q gradle-8.14.2-bin.zip","detail":"pid=24648 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:48.936Z","source":"agent","category":"probe","title":"$ rm -f gradle-8.14.2-bin.zip","detail":"pid=24652 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:53.020Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=24664 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:53.021Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=24665 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:53.021Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=24667 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:57:53.021Z","source":"agent","category":"probe","title":"$ unzip -q /tmp/cmdtools.zip","detail":"pid=24668 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:58:09.934Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=24774 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:58:09.935Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=24775 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:58:09.935Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=24777 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:58:09.935Z","source":"agent","category":"probe","title":"$ yes","detail":"pid=24781 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:58:09.935Z","source":"agent","category":"probe","title":"$ sh cmdline-tools/latest/bin/sdkmanager --sdk_root=/home/z/my-project/tools/android-sdk --licenses","detail":"pid=24782 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:58:09.935Z","source":"agent","category":"probe","title":"$ tail -2","detail":"pid=24783 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:58:09.935Z","source":"agent","category":"probe","title":"$ sh cmdline-tools/latest/bin/sdkmanager --sdk_root=/home/z/my-project/tools/android-sdk --licenses","detail":"pid=24791 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:58:13.937Z","source":"agent","category":"probe","title":"$ java -Dcom.android.sdklib.toolsdir=/home/z/my-project/tools/android-sdk/cmdline-tools/latest -classpath /home/z/my-project/tools/android-sdk/cmdline-t","detail":"pid=24925 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:58:13.938Z","source":"agent","category":"probe","title":"$ tail -4","detail":"pid=24926 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:58:43.966Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=25066 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:58:43.966Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=25067 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:58:43.966Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=25069 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:59:27.010Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=25117 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:59:27.011Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=25118 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:59:27.011Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=25120 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:59:34.012Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=25163 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:59:34.013Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=25164 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T17:59:34.013Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=25166 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T17:59:34.013Z","source":"agent","category":"probe","title":"$ sleep 60","detail":"pid=25167 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:00:44.186Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=25258 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:00:44.186Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=25259 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:00:44.186Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=25261 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:00:44.186Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=25262 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:00:44.186Z","source":"agent","category":"probe","title":"$ sleep 5","detail":"pid=25263 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:00:44.186Z","source":"agent","category":"probe","title":"$ bash scripts/build-aemu.sh","detail":"pid=25264 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:00:44.186Z","source":"agent","category":"probe","title":"$ /usr/lib/jvm/java-21-openjdk-amd64/bin/java -Xmx64m -Xms64m -javaagent:/home/z/my-project/tools/gradle-8.14.2/lib/agents/gradle-instrumentation-agent-","detail":"pid=25268 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:00:46.190Z","source":"agent","category":"probe","title":"$ /usr/lib/jvm/java-21-openjdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens","detail":"pid=25303 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:00:59.144Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=25361 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:00:59.145Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=25362 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:01:00.145Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=25366 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:01:00.145Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=25367 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:01:00.145Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=25369 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:01:00.145Z","source":"agent","category":"probe","title":"$ sleep 180","detail":"pid=25370 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:32.444Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=25630 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:32.445Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=25633 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:32.445Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=25635 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:32.445Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=25636 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:32.445Z","source":"agent","category":"probe","title":"$ sleep 3","detail":"pid=25637 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:32.445Z","source":"agent","category":"probe","title":"$ bash scripts/build-aemu.sh","detail":"pid=25638 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:32.445Z","source":"agent","category":"probe","title":"$ /usr/lib/jvm/java-21-openjdk-amd64/bin/java -Xmx64m -Xms64m -javaagent:/home/z/my-project/tools/gradle-8.14.2/lib/agents/gradle-instrumentation-agent-","detail":"pid=25642 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:33.532Z","source":"agent","category":"probe","title":"$ /usr/lib/jvm/java-21-openjdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens","detail":"pid=25675 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:40.457Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=25725 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:40.457Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=25726 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:40.457Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=25728 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:40.458Z","source":"agent","category":"probe","title":"$ git diff --stat","detail":"pid=25729 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:43.481Z","source":"agent","category":"probe","title":"$ git status --short","detail":"pid=25737 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:43.481Z","source":"agent","category":"probe","title":"$ head -12","detail":"pid=25738 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:51.462Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=25785 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:51.462Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=25786 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:51.462Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=25788 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:52.464Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=25791 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:52.464Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=25792 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:52.464Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=25794 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:04:52.464Z","source":"agent","category":"probe","title":"$ sleep 240","detail":"pid=25795 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:06.828Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=26088 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:06.828Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=26089 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:06.828Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=26091 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:41.878Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=26149 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:41.879Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=26150 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:41.879Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=26152 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:42.948Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=26155 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:42.949Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=26156 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:42.949Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=26158 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:42.949Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=26160 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:42.949Z","source":"agent","category":"probe","title":"$ sleep 3","detail":"pid=26161 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:42.949Z","source":"agent","category":"probe","title":"$ bash scripts/build-aemu.sh","detail":"pid=26162 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:42.949Z","source":"agent","category":"probe","title":"$ /usr/lib/jvm/java-21-openjdk-amd64/bin/java -Xmx64m -Xms64m -javaagent:/home/z/my-project/tools/gradle-8.14.2/lib/agents/gradle-instrumentation-agent-","detail":"pid=26166 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:43.891Z","source":"agent","category":"probe","title":"$ /usr/lib/jvm/java-21-openjdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens","detail":"pid=26199 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:48.888Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=26242 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:48.888Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=26243 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:48.888Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=26245 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:09:48.889Z","source":"agent","category":"probe","title":"$ sleep 210","detail":"pid=26246 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:13:12.149Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=26459 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:13:12.149Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash","detail":"pid=26460 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:13:12.149Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=26462 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:13:59.283Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=26556 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:13:59.283Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=26557 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:13:59.283Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=26559 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:13:59.283Z","source":"agent","category":"probe","title":"$ timeout 570 bash scripts/build-aemu.sh","detail":"pid=26560 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:13:59.284Z","source":"agent","category":"probe","title":"$ tail -45","detail":"pid=26561 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:13:59.284Z","source":"agent","category":"probe","title":"$ bash scripts/build-aemu.sh","detail":"pid=26562 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:13:59.284Z","source":"agent","category":"probe","title":"$ /usr/lib/jvm/java-21-openjdk-amd64/bin/java -Xmx64m -Xms64m -javaagent:/home/z/my-project/tools/gradle-8.14.2/lib/agents/gradle-instrumentation-agent-","detail":"pid=26566 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:14:00.288Z","source":"agent","category":"probe","title":"$ /usr/lib/jvm/java-21-openjdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens","detail":"pid=26600 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:18:28.521Z","source":"agent","category":"probe","title":"$ /home/z/.gradle/caches/8.14.2/transforms/347c8bf7b7b4f093e077c09a4931a9db/transformed/aapt2-8.13.2-14304508-linux/aapt2 m","detail":"pid=27035 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:19:48.608Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=27154 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:19:48.608Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=27155 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:19:48.608Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=27157 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:19:48.608Z","source":"agent","category":"probe","title":"$ curl -sL -o jdk21.tar.gz https://ghfast.top/https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.5%2B11/OpenJDK21U-jdk_x64_linux_","detail":"pid=27158 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:22:55.954Z","source":"agent","category":"probe","title":"$ tar xzf jdk21.tar.gz","detail":"pid=27366 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:22:55.977Z","source":"agent","category":"probe","title":"$ gzip -d","detail":"pid=27367 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:23:00.017Z","source":"agent","category":"probe","title":"$ ./jdk-21.0.5+11/bin/javac -version","detail":"pid=27383 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T18:23:08.936Z","source":"agent","category":"probe","title":"$ su z -c '/bin/bash --noprofile --norc'","detail":"pid=27523 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:23:08.937Z","source":"agent","category":"probe","title":"$ su z -c /bin/bash --noprofile --norc","detail":"pid=27524 · user=root · elapsed=00:00"}
+{"ts":"2026-11-13T18:23:09.981Z","source":"agent","category":"probe","title":"$ /bin/bash --noprofile --norc","detail":"pid=27526 · user=z · elapsed=00:01"}
+{"ts":"2026-11-13T18:23:09.981Z","source":"agent","category":"probe","title":"$ timeout 590 bash scripts/build-aemu.sh","detail":"pid=27527 · user=z · elapsed=00:01"}
+{"ts":"2026-11-13T18:23:09.981Z","source":"agent","category":"probe","title":"$ tail -50","detail":"pid=27528 · user=z · elapsed=00:01"}
+{"ts":"2026-11-13T18:23:09.981Z","source":"agent","category":"probe","title":"$ bash scripts/build-aemu.sh","detail":"pid=27529 · user=z · elapsed=00:01"}
+{"ts":"2026-11-13T18:23:09.981Z","source":"agent","category":"probe","title":"$ /home/z/my-project/tools/jdk-21.0.5+11/bin/java -Xmx64m -Xms64m -javaagent:/home/z/my-project/tools/gradle-8.14.2/lib/agents/gradle-instrumentation-ag","detail":"pid=27530 · user=z · elapsed=00:01"}
+{"ts":"2026-11-13T18:23:10.988Z","source":"agent","category":"probe","title":"$ /home/z/my-project/tools/jdk-21.0.5+11/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-o","detail":"pid=27563 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T19:27:53.526Z","source":"system","category":"verify","title":"指令自动捕捉器已上线","detail":"process-watcher 随 Next.js 启动 (pid=32269)，每 1000ms 轮询 ps，沙箱内新进程将实时进入本直播流"}
+{"ts":"2026-11-13T19:27:54.534Z","source":"agent","category":"probe","title":"$ /usr/local/bin/uv run main.py","detail":"pid=945 · user=root · elapsed=06:01:08"}
+{"ts":"2026-11-13T19:27:54.535Z","source":"agent","category":"probe","title":"$ /bin/bash /app/zcode-driver/boot.sh start","detail":"pid=958 · user=root · elapsed=06:01:08"}
+{"ts":"2026-11-13T19:27:54.535Z","source":"agent","category":"probe","title":"$ /usr/bin/node /app/zcode-driver/main.mjs","detail":"pid=973 · user=root · elapsed=06:01:08"}
+{"ts":"2026-11-13T19:27:54.535Z","source":"agent","category":"probe","title":"$ /app/.venv/bin/python main.py","detail":"pid=996 · user=root · elapsed=06:01:06"}
+{"ts":"2026-11-13T19:27:54.535Z","source":"agent","category":"probe","title":"$ bun .next/standalone/server.js","detail":"pid=32269 · user=z · elapsed=00:01"}
+{"ts":"2026-11-13T19:27:54.535Z","source":"agent","category":"probe","title":"$ sleep 8","detail":"pid=32270 · user=z · elapsed=00:01"}
+{"ts":"2026-11-13T19:28:34.568Z","source":"agent","category":"probe","title":"$ /bin/bash","detail":"pid=32370 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T19:29:00.598Z","source":"agent","category":"probe","title":"$ git worktree add /tmp/aemu-check 3b97ed5","detail":"pid=32438 · user=z · elapsed=00:00"}
+{"ts":"2026-11-13T19:29:00.599Z","source":"agent","category":"probe","title":"$ /usr/lib/git-core/git reset --hard --no-recurse-submodules","detail":"pid=32439 · user=z · elapsed=00:00"}

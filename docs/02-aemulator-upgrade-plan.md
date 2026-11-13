@@ -1,0 +1,51 @@
+# 02 - AEmulator 升级路线图与上一轮实施记录
+
+> 目标由用户在第 4 轮确定，第 7 轮完成第一轮实施（产物随沙盒重置丢失，本文记录"做了什么、怎么做的"，供复现）。
+
+## 1. 升级目标（用户原文要求，长期有效）
+
+1. 更方便地管理 root（超级用户开关管理）
+2. 模块兼容 + LSPosed/Xposed 兼容（Xposed 资源管理、模块安装使用）
+3. 若需固件，选 **Android 15 为底的 AOSP GSI arm64**
+4. 修改后 ROM 能识别 ROOT 并自动应用于全局可识别应用
+
+## 2. 上一轮（第 7 会话）实施产物（全部丢失，待复现）
+
+| 产物 | 说明 |
+| --- | --- |
+| `download/AEmulator-0.0.0.3-root-xposed-upgrade.apk` | 0.0.0.3 升级版 |
+| `download/AEmulator-0.0.0.4-root-xposed-upgrade.apk` | 0.0.0.4 升级版（root + xposed 增强） |
+| `download/AEmulator-0.0.0.4-side-by-side-v0003.apk` | 0.0.0.4 并行共存变体 v0003 |
+| `download/aemulator-root-modules.patch` / `-v04.patch` | root 模块补丁（v04 为终版） |
+| `download/AEmulator-upgraded-src.zip` | 升级后源码打包 |
+| `scripts/build-aemu.sh` | 一键构建脚本 |
+| `scripts/aemu-release.jks` | 发布签名 keystore（丢失；重建时需新生成并告知用户口令自管） |
+| `download/AEmulator升级实施报告-Root管理与模块体系.docx/.pdf` | 实施报告 |
+| `download/VirtualMaster逆向分析与AEmulator迁移方案.docx/.pdf` | 逆向与迁移方案报告 |
+| `download/ROM解密产物/` | ROM 解密流水线产物（见 docs/01 第 5 节） |
+
+（以上路径与存在性来自 `artifacts/file-manifest-initial.json`，12,649 文件清单蒸馏。）
+
+## 3. 工程基线（第 1 轮建成，源码在本仓库 template-round1/）
+
+- Next.js 16 + bun 栈，工作台组件：`ExplorerApp` / `CloudCockpit` / `TerminalView` / `AgentLiveFeed`（实时指令捕捉）/ `CloudFileExplorer` / `UploadView` / `ApkLabView` / `ExportDeployView` / `ScriptPlayground`。
+- 关键设施：
+  - `src/lib/process-watcher.ts`：轮询 ps 实现指令自动捕捉（1s 周期）
+  - `src/instrumentation.ts`：Next.js 启动挂钩
+  - `src/app/api/upload/route.ts`：2GB 流式上传
+  - `src/app/api/apk/job/route.ts` + `scripts/apk-job-runner.sh`：后台反编译作业（jadx 1.5.6 / apktool 3.0.3 / JDK 21）
+  - `src/app/api/apk/tools/route.ts`：工具状态
+- 上一会话还追加了 `src/app/api/deliverables/*` 交付下载中心与 `DeliverablesView.tsx`（清单见 artifacts）。
+
+## 4. 复现与继续升级的步骤
+
+1. 取上游源码：`uxazu/AEmulator`，参考 commit `3b97ed5`（agent-log 记录 `git worktree add /tmp/aemu-check 3b97ed5`）。GitHub 直连受阻用 ghfast.top 镜像。
+2. 以 `template-round1/` 为工作台底座，重挂 upload/apk-job/deliverables API。
+3. 按 docs/01 第 7/8 节移植 root 体系（Magisk 可插拔 zip + superuser 开关管理）与 hook 层（LSPlant/Pine + Xposed API 适配）。
+4. 重建 `scripts/build-aemu.sh` 构建链（APK 打包 + apksigner 签名，jks 新建）。
+5. 产物命名沿用 `AEmulator-<版本>-root-xposed-upgrade.apk` 惯例，方便对照。
+
+## 5. 稳定性红线（用户明确要求）
+
+- 改版不得破坏 ROM 原有功能，特别是**网络**（当前回归 bug 见 docs/04）。
+- 每次改版必须保留原版对照构建（side-by-side 变体即为此目的），并做冒烟清单：启动 / 网络 / root 开关 / 模块安装 / 应用导入。
