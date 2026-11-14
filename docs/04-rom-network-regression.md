@@ -36,5 +36,17 @@
 
 ## 6. 备注
 
-- 上一轮产物已丢失，本排查依赖用户重新上传原版 ROM 分发包（537MB）后重建改版 rom.img 才能执行 diff。
-- 若时间紧张：优先做第 6 节三步 DNS 实证 + 第 3 节 hosts/props/init.rc diff，覆盖 80% 常见翻车面。
+- 对照输入已齐备：原版 ROM 分发包（Release `rom_default_12.1.0_1034.zip`）与修改版（`rom_default_12.1.0_1034_root_xposed_api100.zip`）均在 Release，可直接 diff。
+- 若装机后无网且时间紧张：优先做第 3 节三步 DNS 实证 + 第 7 节哈希比对，覆盖 80% 常见翻车面。
+
+## 7. 2026-11-14 实施结果：ROM v2（构建期修复）
+
+- 产出 `rom_default_12.1.0_1034_root_xposed_api100.zip`（Release）：以**原档条目更新式**重打包（2907 原始条目全部保真 + 8 项纯新增：`fs/system/bin/su`、`fs/system/xbin/su`、`fs/sbin/su`（0755，请求文件协议对齐 SuDaemon）、`fs/data/aemu-su/{req,resp}`（0777）、`fs/system/xposed.prop`（version=100）、`fs/system/framework/XposedBridge.jar`（API 100 真实桥接）、`fs/system/app/Superuser.apk` 标记）。
+- **网络文件零改动**（修复策略 = 只增不改）。注入后基线哈希（sha256，装机后可用 `sha256sum` 比对）：
+  - `system/build.prop` 4114B `8d53a1686acec35f779c57013c2da3e682e2909e8f83fab6bc2341eedb279880`
+  - `system/etc/hosts` 56B `425c3e713d5bae19b031bc8639c20c6a23e311a54647ba1824cbf45969a11ff4`
+  - `init.environ.rc` 463B `cb612c1ab9a5edf2a70664a881e6f80aa3b97088c98ef7a8dca69d569c1a8b14`
+  - `system/bin/netd` 602504B `aa9b215417d3a4427695748d929a115c86d33f7869d8c6a56488fb09737d1917`
+  - `system/etc/ueventd.rc` 3084B `f2223150afaa7dcaf20fe47dfe8a0fbf0d377f5f8065fecf373049e316a6d446`
+- 宿主侧 DNS 桥（dnsproxyd）与 netd 通路未触碰；若装机后仍无网络，按第 3/4 节协议走 VM 菜单 → Network 自检行定位（桥未接管 = "Restart netd"）。
+- 工具链：真 7-Zip 25.01（py7zr 拒绝树外符号链接，不可用）；重打包方式 = 以原 7z 为底 `7zz a` 条目更新，条目总数 2907→2918。

@@ -49,3 +49,12 @@
 
 - 改版不得破坏 ROM 原有功能，特别是**网络**（当前回归 bug 见 docs/04）。
 - 每次改版必须保留原版对照构建（side-by-side 变体即为此目的），并做冒烟清单：启动 / 网络 / root 开关 / 模块安装 / 应用导入。
+
+## 6. 2026-11-14 增量：0.0.0.5（Xposed API 100）
+
+- **API 100 桥接 jar**：`de.robv.android.xposed.*` 真实 API 类（XposedBridge VERSION=100 / XC_MethodHook / XposedHelpers / IXposedHookLoadPackage·ZygoteInit / XSharedPreferences），javac+d8 构建为 `XposedBridge.jar`（classes.dex 11KB）。
+- **XposedManager.kt**：xposed.prop `version/versionCode=93→100`；seedMarkers 优先从 `res/raw/xposedbridge.jar` 复制真实桥接（资源名 `app.aemu:raw/xposedbridge` 已验证入包），无资源时回退标记 jar（MANIFEST 带 `Xposed-Bridge-Version: 100`）。
+- **版本**：versionCode 5 / versionName 0.0.0.5；`app-standard-release.apk`（`app.aemu`）+ `app-v0003-release.apk`（`app.aemu.v0003`）均以 `aemu-release.jks`（口令 aemu-root-modules，见 keystore.properties）签名，与 0.0.0.4 同证书可直接覆盖安装。
+- **补丁**：`aemulator-root-modules-v05.patch`（基准 = AEmulator-upgraded-src.zip 树）。
+- **ROM v2**：见 docs/04 第 7 节（root+xposed 文件直接烧入系统树，与 app 侧 seedGuestFiles/seedMarkers 协议完全一致）。
+- 遗留：LSPlant/Pine 进程内加载器仍未落地（VMOS 的 liblsplant 在加密插件内，取回需动态抓取）；API 100 的 hook 执行通路是下一阶段。

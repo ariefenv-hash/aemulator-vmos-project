@@ -11,10 +11,10 @@
 | 项目 | 状态 |
 | --- | --- |
 | 产品逆向分析（虚拟大师 3.2.67 + 安卓12 ROM） | 已完成七轮，结论全部沉淀在 docs/01 |
-| AEmulator 升级（root 管理 / Xposed / 模块体系） | 0.0.0.3/0.0.0.4 三枚 APK、root-modules 补丁两版、升级源码包（180MB）全部恢复，已推送 Release |
+| AEmulator 升级（root 管理 / Xposed / 模块体系） | 0.0.0.5 已构建（Xposed API 100 桥接 + res/raw 真实 jar）；0.0.0.3/0.0.0.4 三枚 APK 与补丁均已恢复并推送 Release |
 | ROM 解密（e=x RC4 体系） | 已跑通；解密脚本与 magisk_v27.0_已解密.zip（24MB）均已恢复（脚本在 recovered-project/download/，解密包在 Release） |
 | 导入 bug（内置导入报"导入失败"） | 修复方向已定：改走 ADB shell + pm install，代码未落地 |
-| ROM 改版后网络丢失（回归 bug） | 症状确认，代码级排查未开始，排查协议见 docs/04 |
+| ROM 改版后网络丢失（回归 bug） | 已按“仅增文件不改网络配置”重建：ROM v2 已推送 Release，网络关键文件哈希基线记录在 docs/04 |
 | 大文件（APK 169MB / ROM 537MB） | 已随平台快照自动恢复，并已作为 Release 资产推送；无需用户重传 |
 | 平台问题（预览被文件阅览占用 / 下载不可达） | 未解决，规避策略见 docs/06 |
 
@@ -49,9 +49,10 @@
 1. 无需用户重传任何文件：APK/ROM 及全部产物已恢复并入仓（源码在 `recovered-project/`，二进制在 GitHub Release）。
 2. 工作底座：直接取用 `recovered-project/`（上一会话完整工程：src/scripts/db/apk-jobs/download 小件），Release 内含三枚升级 APK 与升级源码包 `AEmulator-upgraded-src.zip`；上游参考 uxazu/AEmulator @ `3b97ed5`（GitHub 直接受阻时用 `ghfast.top` 镜像加速约 30 倍）。
 3. ROM 解密流水线脚本：`recovered-project/download/decrypt_rom_package.py`；解密产物：Release 资产 `magisk-v27.0-decrypted.zip`。
-4. 按 docs/03 落地导入 bug 修复（ADB + pm install）。
-5. 按 docs/04 排查 ROM 网络丢失回归（先代码层 diff 原版/改版 rom.img 配置）。
-6. 每完成一个阶段性产物：立即 commit + push 到本仓库（大文件走 Release 资产），防止再次因沙盒重置丢失。
+4. 新交付（2026-11-14）：**AEmulator-0.0.0.5** 两枚 APK（Xposed API 100 桥接，同证书可直接覆盖 0.0.0.4）+ **ROM v2**（`rom_default_12.1.0_1034_root_xposed_api100.zip`，2907 条目保真 + su 三件套/XposedBridge.jar/xposed.prop 注入，网络文件零改动）+ `aemulator-root-modules-v05.patch`。
+5. 按 docs/03 落地导入 bug 修复（0.0.0.4 已修，0.0.0.5 沿用同一通路）。
+6. 按 docs/04 持续验证 ROM v2 网络（装机后看 VM 菜单 → Network 面板自检行）。
+7. 每完成一个阶段性产物：立即 commit + push 到本仓库（大文件走 Release 资产），防止再次因沙盒重置丢失。
 
 ## 5. 环境备忘
 

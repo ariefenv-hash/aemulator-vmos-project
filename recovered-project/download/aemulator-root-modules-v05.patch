@@ -1,0 +1,72 @@
+# aemulator-root-modules-v05: Xposed API 100 + version bump
+# 对比基准: AEmulator-upgraded-src.zip (0.0.0.4 tree)
+--- /tmp/v05orig/app/src/main/java/app/aemu/core/XposedManager.kt	2026-11-13 18:04:48.000000000 +0000
++++ app/src/main/java/app/aemu/core/XposedManager.kt	2026-11-14 01:06:20.438014520 +0000
+@@ -2,6 +2,7 @@
+ 
+ import org.json.JSONArray
+ import org.json.JSONObject
++import app.aemu.R
+ import java.io.File
+ import java.util.zip.ZipEntry
+ import java.util.zip.ZipOutputStream
+@@ -14,8 +15,9 @@
+  * module/manager apps look for (xposed.prop, XposedBridge.jar), so the firmware "sees" the framework.
+  *
+  * The in-process hooking itself (LSPlant, the same engine the foreign VMOS ships) is the next phase: it loads the
+- * enabled modules' dex into a scoped app's process and hands it the standard Xposed API. The registry and the file
+- * layout this manager owns are exactly what that loader consumes.
++ * enabled modules' dex into a scoped app's process and hands it the standard Xposed API — the shipped bridge jar
++ * reports API level 100 (above the LSPosed 93 ceiling) and carries the de.robv.android.xposed API classes. The
++ * registry and the file layout this manager owns are exactly what that loader consumes.
+  */
+ class XposedManager(private val vm: GuestVm) {
+ 
+@@ -89,18 +91,24 @@
+             if (!any) { prop.delete(); bridge.delete(); return }
+             prop.parentFile?.mkdirs()
+             prop.writeText(
+-                "version=93\n" +
+-                    "versionCode=93\n" +
++                "version=100\n" +
++                    "versionCode=100\n" +
+                     "name=AEmulator Xposed compatibility\n" +
+-                    "description=Modules are managed by the AEmulator app (VM menu → Modules); the LSPlant loader applies them per app\n")
++                    "description=Modules are managed by the AEmulator app (VM menu → Modules); the in-process loader applies them per app\n")
+             if (!bridge.isFile) {
+-                ZipOutputStream(bridge.outputStream()).use { z ->
+-                    z.putNextEntry(ZipEntry("META-INF/MANIFEST.MF"))
+-                    z.write("Manifest-Version: 1.0\nXposed-Bridge: AEmulator compat layer\n\n".toByteArray())
+-                    z.closeEntry()
+-                    z.putNextEntry(ZipEntry("assets/xposed_bridge_marker"))
+-                    z.write("AEmulator Xposed compatibility layer\n".toByteArray())
+-                    z.closeEntry()
++                // real API-100 bridge (classes.dex with de.robv.android.xposed.*) shipped in res/raw; the marker jar is the fallback
++                val raw = runCatching { vm.ctx.resources.openRawResource(R.raw.xposedbridge) }.getOrNull()
++                if (raw != null) {
++                    raw.use { i -> bridge.outputStream().use { i.copyTo(it) } }
++                } else {
++                    ZipOutputStream(bridge.outputStream()).use { z ->
++                        z.putNextEntry(ZipEntry("META-INF/MANIFEST.MF"))
++                        z.write("Manifest-Version: 1.0\nXposed-Bridge: AEmulator compat layer\nXposed-Bridge-Version: 100\n\n".toByteArray())
++                        z.closeEntry()
++                        z.putNextEntry(ZipEntry("assets/xposed_bridge_marker"))
++                        z.write("AEmulator Xposed compatibility layer (API 100)\n".toByteArray())
++                        z.closeEntry()
++                    }
+                 }
+             }
+         }
+--- /tmp/v05orig/app/build.gradle.kts	2026-11-13 18:04:48.000000000 +0000
++++ app/build.gradle.kts	2026-11-14 01:06:39.051031146 +0000
+@@ -48,8 +48,8 @@
+         // 28: гостевые бинарники запускаются из каталога данных приложения (W^X для targetSdk>=29)
+         //noinspection ExpiredTargetSdkVersion
+         targetSdk = 28
+-        versionCode = 3
+-        versionName = "0.0.0.3"
++        versionCode = 5
++        versionName = "0.0.0.5"
+         ndk { abiFilters += listOf("arm64-v8a") }
+     }
+ 
