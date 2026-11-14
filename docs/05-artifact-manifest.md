@@ -50,3 +50,23 @@
 ## 4. 时间戳参考
 
 清单内关键文件时间戳（epoch 秒）约 `1794597204` 附近 = 2026-11-13 晚（UTC），即上一会话收尾时刻，可供核对版本先后。
+
+## 5. 2026-11-14 第 9 轮更新：安卓 12 资产清除 + 安卓 15 GSI 新增
+
+**删除（用户指示：安卓 12 仅为分享分析用途，主线切换安卓 15）**
+
+| 位置 | 对象 |
+| --- | --- |
+| GitHub Release `recovery-20261113` | `rom_default_12.1.0_1034.zip`（513MB）、`rom_default_12.1.0_1034_root_xposed_api100.zip`（495MB）、`extracted-rom.tar.gz`（24MB）——3 项已删除 |
+| 本地 | uploads 安卓 12 ROM 原包（537MB）、download/ ROM v2（519MB）、extracted/rom、ROM解密产物/magisk 解密包（脚本/manifest/密钥说明三个小文件保留）、release-assets 内已上传的重复大件（约 870MB） |
+
+**保留**：`magisk-v27.0-decrypted.zip`（Release，来自插件体系分析，与 ROM 无关）；虚拟大师 APK 及全部逆向产物（分析主线仍有效）；docs/01~04 全部文字结论。
+
+**新增（安卓 15 主线）**
+
+| 产物 | 位置 |
+| --- | --- |
+| aosp15-gsi-arm64-vmroot-v1.img.gz（959,189,334B，SHA-256 288e44ad…bce00bc5） | Release `android15-gsi-vmroot-v1` + 本地 download/ |
+| Magisk-v31.1.apk、LSPosed-zygisk-v1.9.3mod.zip | Release `android15-gsi-vmroot-v1` |
+| GSI 注入流水线（apply.sh + vmroot.rc/vmroot-setup.sh/su/README） | 本地 scripts/gsi-patch/（原版底包直链与校验值见 docs/07 §1） |
+| 底包原件 aosp_arm64-exp-BP11.241210.004-12926906-ac28fd4c.zip | 未存本地（官方直链随时可取，SHA-256 官方表格可校验） |

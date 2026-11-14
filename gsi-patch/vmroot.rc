@@ -1,0 +1,25 @@
+# AEmulator VMRoot - Magisk v31.1 system-mode integration
+# Base: Android 15 (API 35) AOSP GSI arm64, build BP11.241210.004-12926906
+# Requirement: boot with permissive SELinux
+#   (engine kernel cmdline: androidboot.selinux=permissive)
+# The magiskd service runs in the init SELinux domain when no transition is
+# defined; all Magisk internals degrade gracefully (best-effort con write).
+
+on post-fs-data
+    mkdir /data/adb 0700 root root
+    mkdir /data/adb/magisk 0755 root root
+    mkdir /data/adb/modules 0700 root root
+    mkdir /data/adb/post-fs-data.d 0700 root root
+    mkdir /data/adb/service.d 0700 root root
+    mount tmpfs tmpfs /debug_ramdisk mode=0700,uid=0,gid=0
+    mkdir /debug_ramdisk/.magisk 0700 root root
+    exec -- /system/bin/vmroot-setup.sh stage1
+
+service magiskd /system/bin/magisk --daemon
+    class late_start
+    user root
+    group root
+    oneshot
+
+on property:sys.boot_completed=1
+    exec background -- /system/bin/vmroot-setup.sh stage2

@@ -58,3 +58,10 @@
 - **补丁**：`aemulator-root-modules-v05.patch`（基准 = AEmulator-upgraded-src.zip 树）。
 - **ROM v2**：见 docs/04 第 7 节（root+xposed 文件直接烧入系统树，与 app 侧 seedGuestFiles/seedMarkers 协议完全一致）。
 - 遗留：LSPlant/Pine 进程内加载器仍未落地（VMOS 的 liblsplant 在加密插件内，取回需动态抓取）；API 100 的 hook 执行通路是下一阶段。
+
+## 7. 2026-11-14 增量：固件方向落地（Android 15 GSI + VMRoot v1）
+
+- 用户拍板切换主线：**固件底座 = 安卓 15 AOSP GSI arm64**，安卓 12（VMOS ROM）线终止、相关文件全部删除。
+- 已完成 GSI 开包分析与 **VMRoot v1 改版**：system-mode Magisk v31.1（daemon/su/magiskpolicy/busybox + Magisk 管理器 priv-app 预装）+ init 服务 vmroot.rc + LSPosed v1.9.3_mod zygisk 种子（可自动安装）+ `ro.aemu.*` 契约 props。全流程、引擎接入契约与已知限制见 **docs/07**；镜像在 Release tag `android15-gsi-vmroot-v1`。
+- 与本计划的对应关系：目标 1（root 开关管理）→ Magisk 管理器 priv-app + su；目标 2（LSPosed/Xposed 兼容）→ 种子模块 + API 100 桥接（§6）对齐；目标 3（安卓 15 AOSP GSI arm64）→ 本轮落地；目标 4（ROOT 自动应用于全局应用）→ Magisk 管理器 auto-response=Allow（可在引擎首启配置中预设）。
+- 下一步（hook 执行通路）：LSPlant/Pine 进程内加载器仍为 app 侧遗留项；建议基于 LSPosed 官方依赖链（org.lsplant maven 预编译产物）接入，避免自行编译 NDK（当前沙盒无 NDK）。

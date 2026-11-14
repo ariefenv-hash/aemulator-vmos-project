@@ -50,3 +50,9 @@
   - `system/etc/ueventd.rc` 3084B `f2223150afaa7dcaf20fe47dfe8a0fbf0d377f5f8065fecf373049e316a6d446`
 - 宿主侧 DNS 桥（dnsproxyd）与 netd 通路未触碰；若装机后仍无网络，按第 3/4 节协议走 VM 菜单 → Network 自检行定位（桥未接管 = "Restart netd"）。
 - 工具链：真 7-Zip 25.01（py7zr 拒绝树外符号链接，不可用）；重打包方式 = 以原 7z 为底 `7zz a` 条目更新，条目总数 2907→2918。
+
+## 8. 2026-11-14 状态变更：安卓 12 ROM 线终止
+
+- 用户指示切换主线到安卓 15 GSI，**安卓 12 系列文件已删除**：本地（原包 537MB / ROM v2 519MB / extracted/rom / 解密产物大件）与 Release（`rom_default_12.1.0_1034.zip`、`rom_default_12.1.0_1034_root_xposed_api100.zip`、`extracted-rom.tar.gz` 三项资产）。
+- 因此第 6 节所述"两版 ROM 对照输入"已不存在；本文全部排查协议（diff 清单 / 三步 DNS 实证 / 逐层回滚）**保留为通用方法论**。
+- 新主线基线（docs/07）：安卓 15 GSI 的 hosts 干净、网络配置零改动，VMRoot v1 注入仅新增文件与追加 build.prop 契约段——理论上不引入 docs/04 §1 类回归；若装机后无网，按 §3 三步 DNS 实证 + 引擎层（libkr shim）对照即可。
