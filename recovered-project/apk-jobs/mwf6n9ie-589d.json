@@ -1,0 +1,1 @@
+{"id": "mwf6n9ie-589d", "action": "unzip-list", "file": "uploads/user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip", "cmd": "unzip -l /home/z/my-project/uploads/user_96C1AFCD7A714C55DE801AAE51EFEBFC_rom_default_12.1.0_1034.zip", "outDir": "", "status": "done", "startedAt": 1794586800615, "pid": 14644, "exitCode": 0, "finishedAt": 1794586800, "durationSec": 0}

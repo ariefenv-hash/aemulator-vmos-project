@@ -37,3 +37,10 @@
 - 磁盘：开工时约 8GB 余量；大中间产物（解包 rom.img、反编译树）用完即删。
 - 工具链：jadx 1.5.6、apktool 3.0.3、JDK 21、Python3、bun/Node 22。
 - 用户时区 Asia/Shanghai；对话与文档语言：中文。
+
+## 6. 快照恢复机制实录（2026-11-14 确认，重要）
+
+- 平台在 `/tmp/my-project/` 维护暂存/克隆区：`.initial_snapshot.json`（每轮刷新为当前 `/home/z/my-project` 状态清单）与 `.pending_clone.json`（待克隆清单 12,605 条路径 + since 时间戳 + attempts 计数）。
+- 实测时间线：沙盒重置后 attempts 从 2 涨到 3；2026-11-13 23:50 第三次克隆成功，将上一会话全量文件（含 169MB APK、537MB ROM、构建产物、反编译树、报告）恢复进 `/tmp/my-project`，且保留原始 mtime。
+- 结论：**云端快照是真实文件快照，不只是清单**；沙盒重置后文件有概率随平台重试自动回来，但次数与时机不可控——黄金法则仍是：阶段性产物立即 push 到 GitHub（git 或 Release），不得依赖自动恢复。
+- 克隆逻辑本体在 `/app/zcode-driver`（root-only，沙盒内不可读）；`/opt/zcode` 仅含运行时（manifest/builtin），无 payload；两个 JSON 内亦无 payload URL（grep 命中均为 android-sdk 文件路径的误报）。

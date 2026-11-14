@@ -1,6 +1,8 @@
 # 05 - 产物清单与恢复方法
 
-> 数据来源：`artifacts/file-manifest-initial.json`（上一会话 12,649 文件的路径+时间戳快照）与 `artifacts/pending-clone-files.json`（平台待克隆清单 12,601 条）。内容本体已随沙盒重置丢失。
+> 数据来源：`artifacts/file-manifest-initial.json`（上一会话 12,649 文件的路径+时间戳快照）与 `artifacts/pending-clone-files.json`（平台待克隆清单 12,601 条）。内容本体曾随沙盒重置丢失。
+>
+> **2026-11-14 恢复纪事**：用户要求深挖后确认平台云端为真实文件快照——`/tmp/my-project` 暂存区经第三次克隆尝试（attempts 2→3）于 23:50 自动恢复全量文件（mtime 保留原值）。下表"状态/恢复方式"为恢复前的悲观记录，仅作历史参考；**实际结果：全部关键产物已恢复**——源码与小件在本仓库 `recovered-project/`，二进制大件在 GitHub Release（tag `recovery-20261113`）。
 
 ## 1. 状态图例
 

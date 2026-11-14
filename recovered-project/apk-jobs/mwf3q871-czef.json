@@ -1,0 +1,1 @@
+{"id": "mwf3q871-czef", "action": "jadx", "file": "uploads/虚拟大师_3.2.67.apk", "cmd": "tools/jadx/bin/jadx -d /home/z/my-project/decompiled/vmos-jadx /home/z/my-project/uploads/虚拟大师_3.2.67.apk", "outDir": "/home/z/my-project/decompiled/vmos-jadx", "status": "done", "startedAt": 1794581900029, "pid": 5542, "exitCode": 0, "finishedAt": 1794581908, "durationSec": 8}

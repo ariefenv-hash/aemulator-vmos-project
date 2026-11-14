@@ -1,0 +1,1012 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index 56a6f74..85a4137 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -1,4 +1,21 @@
+-# AEmulator 0.0.0.3
++# AEmulator 0.0.0.4
++
++### Stability and network (this fork)
++- **Guest network self-check**: shortly after every boot the VM log gets one line that tells whether the guest resolves names through the dnsproxyd bridge and whether ping replies — a silent "no network" becomes visible at once, with its cause (broken DNS bridge vs. filtered ICMP).
++- **Network panel** (VM menu → Network): dnsproxyd query counter, `net.dns1`, a resolving probe, the raw ping output, a verdict line, "Test again" and "Restart netd" (the guest re-creates the socket, the bridge takes it over again).
++- **Root switch is now a real switch**: root off removes every `su` binary from the guest tree at once (the VMOS semantics) and root on puts them back; no su files are seeded while root is disabled. The fake `system/app/Superuser.apk` marker (a text file some firmwares' package manager had to scan at boot) is gone — the su binaries are the only artifacts.
++- **su commands run one at a time** through a worker queue: every su call is a full guest process, and a pile of them squeezed the host app that also runs the DNS proxy and all VM services.
++- **su fails fast**: the script exits immediately when the daemon is not running (root off / VM stopped) instead of waiting up to 15 minutes; the in-guest wait dropped from 900 s to 300 s.
++- **Module install fixes**: the package name and version now come from the host-side APK parse (`getPackageArchiveInfo`) — installing an update to an already-installed module no longer misidentifies it; a module without `xposedmodule` meta-data is logged as such.
++- **Module scope editing** (VM menu → Modules → Scope): the per-module scope list (comma-separated packages), pre-filled with the scope the module declares about itself (meta-data `xposedscope` / assets `xposed_scope`).
++- **"Test root"** in the Superuser panel: a full round trip (`su -c id` through the request file, the daemon and back) with the real output shown inline.
++- **Two APKs per release**: `standard` (replaces the original app.aemu — uninstall it first, its images live in the app's private storage and are lost) and `v0003` (`app.aemu.v0003`, installs next to the original and keeps both sets of images).
++
++### Root and modules (0.0.0.3, this fork, ported from the foreign VMOS app)
++- **Working root for guest apps**: the guest tree ships a plain `su` script (/system/bin, /system/xbin, /sbin); every call becomes a request file that a new host-side daemon (core/SuDaemon.kt) runs as a uid-0 guest process and answers with output + exit code. No kernel, no Magisk, works on every engine (2.3–4.4 QEMU and the native arm64 one).
++- **Superuser panel** (VM menu → Superuser): master root switch, default policy (grant all / ask each / deny all), per-app allow/deny rules, the log of recent requests; "ask" requests pop a dialog in the VM window (60 s of silence = deny). Rules persist next to the image.
++- **Xposed module management** (VM menu → Modules): module APKs are installed into the guest as regular apps and registered (enabled/disabled, version); with an enabled module the boot seeds the framework markers the module/checker apps look for (xposed.prop, XposedBridge.jar). The LSPlant in-process loader that applies modules to scoped apps is the next phase; the registry it will consume is live.
++- **APK install fixed**: the "Install APK" menu item pushed the file to the emulated sdcard, which the guest's own pm refuses (like real Android refuses /storage paths) — the dialog then always said "install failed". Now the APK lands in the image's /data/local/tmp (the exact path of the `adb install` that worked) and is installed over the same channel, with pm's real output in the toast.
+ 
+ **🇬🇧 English** · [🇷🇺 Русский](docs/i18n/CHANGELOG.ru.md) · [🇺🇦 Українська](docs/i18n/CHANGELOG.uk.md) · [🇩🇪 Deutsch](docs/i18n/CHANGELOG.de.md) · [🇫🇷 Français](docs/i18n/CHANGELOG.fr.md) · [🇪🇸 Español](docs/i18n/CHANGELOG.es.md) · [🇧🇷 Português](docs/i18n/CHANGELOG.pt-BR.md) · [🇮🇹 Italiano](docs/i18n/CHANGELOG.it.md) · [🇵🇱 Polski](docs/i18n/CHANGELOG.pl.md) · [🇹🇷 Türkçe](docs/i18n/CHANGELOG.tr.md) · [🇸🇦 العربية](docs/i18n/CHANGELOG.ar.md) · [🇮🇷 فارسی](docs/i18n/CHANGELOG.fa.md) · [🇮🇳 हिन्दी](docs/i18n/CHANGELOG.hi.md) · [🇮🇩 Indonesia](docs/i18n/CHANGELOG.id.md) · [🇻🇳 Tiếng Việt](docs/i18n/CHANGELOG.vi.md) · [🇨🇳 简体中文](docs/i18n/CHANGELOG.zh-CN.md) · [🇯🇵 日本語](docs/i18n/CHANGELOG.ja.md) · [🇰🇷 한국어](docs/i18n/CHANGELOG.ko.md)
+ 
+diff --git a/app/build.gradle.kts b/app/build.gradle.kts
+index 785ee47..a5bea52 100644
+--- a/app/build.gradle.kts
++++ b/app/build.gradle.kts
+@@ -48,8 +48,8 @@ android {
+         // 28: гостевые бинарники запускаются из каталога данных приложения (W^X для targetSdk>=29)
+         //noinspection ExpiredTargetSdkVersion
+         targetSdk = 28
+-        versionCode = 3
+-        versionName = "0.0.0.3"
++        versionCode = 4
++        versionName = "0.0.0.4"
+         ndk { abiFilters += listOf("arm64-v8a") }
+     }
+ 
+diff --git a/app/src/main/java/app/aemu/core/GuestVm.kt b/app/src/main/java/app/aemu/core/GuestVm.kt
+index 2d4984a..c3984a7 100644
+--- a/app/src/main/java/app/aemu/core/GuestVm.kt
++++ b/app/src/main/java/app/aemu/core/GuestVm.kt
+@@ -94,6 +94,10 @@ class GuestVm(val ctx: Context, val img: GuestImage) {
+     val props = PropService(paths, ::log)
+     /** ADB over the LAN, switched on from the VM menu */
+     val adb = AdbServer(this)
++    /** guest root: the su script in the guest tree + this host-side superuser daemon (the VMOS way, no kernel) */
++    val su = SuDaemon(this)
++    /** Xposed-style module registry; the VM menu → Modules edits it */
++    val xposed = XposedManager(this)
+     val input = InputService(paths, ::log)
+     // 2.x пишет в /dev/eac через AudioHardwareGeneric на 44,1 кГц, HAL 4.x движка — на 48 кГц
+     val audio = AudioOut(paths, ::log, if (img.api < 14) 44100 else AudioOut.RATE,
+@@ -260,6 +264,11 @@ class GuestVm(val ctx: Context, val img: GuestImage) {
+         if (File(paths.root, "system/.aemu-parked/system#lib#hw#audio_policy.default.so").isFile) swapAudioPolicy()
+         GuestLog.clear(paths.root)
+         val sd = Sdcard.setup(ctx, paths, img, ::log)
++        // root and modules: the guest tree gets its su script (and the request/response folders) before any service,
++        // so even init-time calls of su work; the daemon watches the requests for as long as the VM runs
++        su.seedGuestFiles()
++        xposed.seedMarkers()
++        su.start()
+ 
+         // 2. свойства
+         val s = settings
+@@ -950,6 +959,7 @@ class GuestVm(val ctx: Context, val img: GuestImage) {
+         TreeFixer(ctx, paths, img, ::log).noScreenSleep()
+         disableBrokenComponents()
+         if (img.api >= 24) runCatching { enableHome() }.onFailure { log("home screen check failed: $it") }
++        Thread { networkSelfCheck() }.start()
+         val img2 =img.copy(lastBootMs = bootDoneAt - bootAt, bootCount = img.bootCount + 1)
+         ImageStore.save(ctx, img2)
+     }
+@@ -1223,7 +1233,7 @@ class GuestVm(val ctx: Context, val img: GuestImage) {
+         log("stopping system")
+         runCatching { guestRunner.run(listOf("/system/bin/sync"), 5_000) }
+         killAll()
+-        adb.stop(); props.stop(); input.stop(); frames.stop(); ril.stop(); vold.stop(); audio.stop(); net.stop(); dns.stop(); events.stop(); logd.stop(); lights.stop(); sensors.stop(); mic.stop(); camera.stop(); GlHost.stop()
++        su.stop(); adb.stop(); props.stop(); input.stop(); frames.stop(); ril.stop(); vold.stop(); audio.stop(); net.stop(); dns.stop(); events.stop(); logd.stop(); lights.stop(); sensors.stop(); mic.stop(); camera.stop(); GlHost.stop()
+         extraStubs.forEach { it.stop() }; extraStubs.clear()
+         lmk?.stop(); lmk = null
+         Keeper.release(ctx)
+@@ -1266,6 +1276,70 @@ class GuestVm(val ctx: Context, val img: GuestImage) {
+     fun guestShell(cmd: String, timeoutMs: Long = 60_000): String =
+         guestRunner.run(listOf("/system/bin/sh", "-c", shellPrefix + cmd), timeoutMs).second
+ 
++    // ------------------------------------------------------------------ network diagnostics
++
++    /** What the guest network self-check reports; [verdict] turns it into one readable line. */
++    data class NetReport(
++        val dnsQueries: Long,
++        val dnsProp: String,
++        val resolvedIp: String?,
++        val dnsOk: Boolean,
++        val icmpOk: Boolean,
++        val rawName: String,
++        val rawIp: String,
++    ) {
++        fun verdict(): String = when {
++            !dnsOk -> "DNS is broken: the guest cannot resolve names (the dnsproxyd bridge is not answering — try “Restart netd” below)"
++            icmpOk -> "network OK: names resolve and ICMP replies come back"
++            else -> "DNS OK, but ping gets no replies — engines often filter ICMP; TCP (browsers, apps) can still work"
++        }
++    }
++
++    /**
++     * Guest-side network probe. Name resolution in the sandbox can only happen through our dnsproxyd
++     * bridge (the guest's own netd has no per-network marks to resolve through), so a resolved name
++     * proves the bridge works; the IP ping tells whether ICMP passes the engine at all.
++     */
++    fun networkReport(): NetReport {
++        val dnsProp = runCatching { guestShell("getprop net.dns1", 20_000).trim().lines().firstOrNull { it.isNotBlank() } ?: "" }.getOrDefault("")
++        val rawName = runCatching { guestShell("ping -c 1 -W 3 gstatic.com", 40_000).trim() }.getOrDefault("")
++        val resolvedIp = Regex("""PING \S+ \(([\d.]+)\)""").find(rawName)?.groupValues?.get(1)
++        val rawIp = runCatching { guestShell("ping -c 1 -W 3 8.8.8.8", 40_000).trim() }.getOrDefault("")
++        val got = Regex("""[,,]\s*1\s+received|0%\s+packet\s+loss""").containsMatchIn(rawIp)
++        return NetReport(
++            dnsQueries = dns.queries,
++            dnsProp = dnsProp,
++            resolvedIp = resolvedIp,
++            dnsOk = resolvedIp != null,
++            icmpOk = got,
++            rawName = rawName,
++            rawIp = rawIp,
++        )
++    }
++
++    /** A one-line self-check into the VM log shortly after the boot completes, so a silent network
++     *  break (a firmware, an engine or a third-party change) is visible in the log at once. */
++    private fun networkSelfCheck() {
++        // wait for ConnectivityService and friends to actually settle before judging
++        for (wait in longArrayOf(8_000, 15_000)) {
++            Thread.sleep(wait)
++            if (state != State.RUNNING) return
++            val r = runCatching { networkReport() }.getOrNull() ?: return
++            val dnsState = if (r.dnsOk) "resolve ok (${r.resolvedIp})" else "no resolution"
++            val icmpState = if (r.icmpOk) "ping ok" else "no ping replies"
++            log("net self-check: dns proxy seen ${r.dnsQueries} queries, guest: $dnsState, $icmpState${if (!r.dnsOk) " ← network seems broken, see VM menu → Network" else ""}")
++            if (r.dnsOk) return   // one good report is enough
++        }
++    }
++
++    /** the “Restart netd” of the Network panel: the guest re-creates the socket, dns.ensure() takes it over again */
++    fun restartGuestNet() {
++        runCatching { guestShell("setprop ctl.restart netd", 60_000) }
++        Thread.sleep(2_000)
++        runCatching { dns.ensure() }
++        log("net: netd restarted, dnsproxyd bridge re-taken")
++    }
++
+     /** Put in front of every guest shell command (menu, adb, terminal): PATH order and the tool wrappers. */
+     val shellPrefix: String get() = "export PATH=/system/bin:/system/xbin:\$PATH; $toolWrappers"
+ 
+diff --git a/app/src/main/java/app/aemu/core/SuDaemon.kt b/app/src/main/java/app/aemu/core/SuDaemon.kt
+new file mode 100644
+index 0000000..0e7da80
+--- /dev/null
++++ b/app/src/main/java/app/aemu/core/SuDaemon.kt
+@@ -0,0 +1,285 @@
++package app.aemu.core
++
++import org.json.JSONArray
++import org.json.JSONObject
++import java.io.File
++import java.util.concurrent.atomic.AtomicBoolean
++import kotlin.concurrent.thread
++
++/**
++ * Root for guest apps, the VMOS way, but without a kernel: the guest tree ships a plain `su` script (written into
++ * /system/bin, /system/xbin and /sbin by [seedGuestFiles] before the services start), and every call of it drops a
++ * request file into /data/aemu-su/req. This host-side daemon picks the request up, resolves the caller's package,
++ * applies the superuser policy (master switch, default policy, per-app allow/deny — edited by the UI panel) and, if
++ * granted, runs the command as a fresh guest process — which the engine starts with uid 0, the same way it starts
++ * init services — and writes the output back into /data/aemu-su/resp, from where the script prints it and exits
++ * with the recorded code.
++ *
++ * The request/response files make the protocol work on every engine (QEMU 2.3–4.4 and the native arm64 one) and
++ * need no new sockets: the guest writes a plain file, the daemon answers with two more (output + exit code, renamed
++ * into place atomically so the script never sees a half-written answer).
++ */
++class SuDaemon(private val vm: GuestVm) {
++
++    data class Entry(val t: Long, val pkg: String, val uid: Int, val cmd: String, val ok: Boolean, val allowed: Boolean)
++
++    /** An "ask" decision surfaced to the UI; [respond] completes the request either way. */
++    class Ask(val pkg: String, val uid: Int, val cmd: String, val respond: (Boolean) -> Unit)
++
++    /** Set by the activity; when the "ask" policy is in effect, the request pops a dialog there. */
++    @Volatile var onRequest: ((Ask) -> Unit)? = null
++
++    private val storeFile: File get() = File(vm.paths.bin, "superuser.json")
++    private var enabled = true
++    private var defaultPolicy = "allow"                       // allow | ask | deny
++    private val apps = LinkedHashMap<String, String>()        // package → allow | deny
++    private val log = ArrayDeque<Entry>()
++    @Volatile private var running = false
++    private var uidCache: Pair<Long, Map<Int, String>> = 0L to emptyMap()
++
++    init { load() }
++
++    // ------------------------------------------------------------------ policy store
++
++    @Synchronized private fun load() {
++        runCatching {
++            val o = JSONObject(storeFile.takeIf { it.isFile }?.readText() ?: "{}")
++            enabled = o.optBoolean("enabled", true)
++            defaultPolicy = o.optString("default", "allow")
++            apps.clear()
++            o.optJSONObject("apps")?.let { a -> a.keys().forEach { k -> apps[k] = a.optString(k, "deny") } }
++            log.clear()
++            o.optJSONArray("log")?.let { arr ->
++                for (i in 0 until arr.length()) {
++                    val e = arr.optJSONObject(i) ?: continue
++                    log.addLast(Entry(e.optLong("t"), e.optString("pkg"), e.optInt("uid"), e.optString("cmd"), e.optBoolean("ok"), e.optBoolean("allowed")))
++                }
++            }
++        }
++    }
++
++    @Synchronized private fun save() {
++        runCatching {
++            val o = JSONObject()
++            o.put("enabled", enabled)
++            o.put("default", defaultPolicy)
++            val a = JSONObject()
++            for ((k, v) in apps) a.put(k, v)
++            o.put("apps", a)
++            val arr = JSONArray()
++            for (e in log) arr.put(JSONObject().put("t", e.t).put("pkg", e.pkg).put("uid", e.uid).put("cmd", e.cmd).put("ok", e.ok).put("allowed", e.allowed))
++            o.put("log", arr)
++            storeFile.writeText(o.toString(2))
++        }
++    }
++
++    data class SuStore(val enabled: Boolean, val default: String, val apps: Map<String, String>, val log: List<Entry>)
++
++    @Synchronized fun store(): SuStore = SuStore(enabled, defaultPolicy, apps.toMap(), log.toList())
++    @Synchronized fun setEnabled(v: Boolean) {
++        enabled = v; save()
++        // the guest tree follows the switch right away: no su binaries while root is off (the VMOS semantics)
++        seedGuestFiles()
++        vm.log("su: root ${if (v) "enabled" else "disabled"}")
++    }
++    @Synchronized fun setDefault(p: String) { defaultPolicy = p; save() }
++    @Synchronized fun setApp(pkg: String, policy: String) { if (policy == "ask") apps.remove(pkg) else apps[pkg] = policy; save() }
++    @Synchronized fun clearLog() { log.clear(); save() }
++
++    /** Whether a request from [pkg] runs without asking: allow/deny, or null when the UI has to decide ("ask"). */
++    @Synchronized fun decide(pkg: String): Boolean? {
++        if (!enabled) return false
++        return when (apps[pkg] ?: defaultPolicy) { "allow" -> true; "deny" -> false; else -> null }
++    }
++
++    @Synchronized private fun record(pkg: String, uid: Int, cmd: String, ok: Boolean, allowed: Boolean) {
++        log.addLast(Entry(System.currentTimeMillis(), pkg, uid, cmd.take(160), ok, allowed))
++        while (log.size > 100) log.removeFirst()
++        save()
++    }
++
++    // ------------------------------------------------------------------ uid → package
++
++    /** `pm list packages -U` of the guest, cached for 10 minutes (5.0+; older firmwares fall back to "uidN"). */
++    private fun uidName(uid: Int): String {
++        val (at, map) = uidCache
++        var map2 = map
++        if (System.currentTimeMillis() - at > 600_000 || uid !in map) {
++            map2 = runCatching {
++                vm.guestShell("pm list packages -U", 90_000).lines().mapNotNull {
++                    val m = Regex("""package:(\S+)\s+uid:(\d+)""").find(it.trim()) ?: return@mapNotNull null
++                    m.groupValues[2].toInt() to m.groupValues[1]
++                }.toMap()
++            }.getOrDefault(map)
++            uidCache = System.currentTimeMillis() to map2
++        }
++        return map2[uid] ?: "uid$uid"
++    }
++
++    // ------------------------------------------------------------------ daemon
++
++    fun start() {
++        if (running) return
++        running = true
++        val resp = File(vm.paths.root, "data/aemu-su/resp")
++        // answers of requests whose script is long gone (VM stopped mid-command)
++        runCatching { resp.listFiles()?.forEach { if (System.currentTimeMillis() - it.lastModified() > 3_600_000) it.delete() } }
++        daemonMarker().writeText("running")
++        thread(name = "su-daemon", isDaemon = true) {
++            val req = File(vm.paths.root, "data/aemu-su/req")
++            while (running) {
++                val now = System.currentTimeMillis()
++                for (f in req.listFiles().orEmpty()) {
++                    if (!f.isFile || now - f.lastModified() < 300) continue   // let the writer finish
++                    val text = runCatching { f.readText() }.getOrDefault("")
++                    val id = f.name
++                    runCatching { f.delete() }
++                    val uid = Regex("""^uid=(\d+)""").find(text)?.groupValues?.get(1)?.toIntOrNull() ?: 0
++                    val cmd = Regex("""\scmd=(.*)$""", RegexOption.DOT_MATCHES_ALL).find(text)?.groupValues?.get(1)?.trim().orEmpty()
++                    if (cmd.isEmpty()) { vm.log("su: unreadable request dropped"); continue }
++                    answer(id, uid, cmd)
++                }
++                Thread.sleep(250)
++            }
++        }
++        vm.log("su: daemon started (root ${if (enabled) "enabled, default $defaultPolicy" else "disabled"})")
++    }
++
++    fun stop() {
++        running = false
++        runCatching { daemonMarker().delete() }
++    }
++
++    /** the guest's su script exits at once (instead of waiting) when this file is gone */
++    private fun daemonMarker(): File = File(vm.paths.root, "data/aemu-su/.daemon")
++
++    /** commands run one at a time: every su command is a full guest process, and a pile of them
++     *  would squeeze the host (the DNS proxy and the services live in this same app process) */
++    private val queue = java.util.concurrent.LinkedBlockingQueue<Runnable>()
++    @Volatile private var worker: Thread? = null
++
++    private fun enqueue(r: Runnable) {
++        synchronized(queue) {
++            queue.put(r)
++            if (worker?.isAlive != true) {
++                worker = thread(name = "su-worker", isDaemon = true) {
++                    try { while (true) { queue.take().run() } } catch (e: InterruptedException) { }
++                }
++            }
++        }
++    }
++
++    private fun answer(id: String, uid: Int, cmd: String) {
++        enqueue {
++            val pkg = uidName(uid)
++            val d = decide(pkg)
++            if (d == null) askWith(id, pkg, uid, cmd) else respond(id, pkg, uid, cmd, d)
++        }
++    }
++
++    /** a full round trip through the guest: the UI "Test root" button */
++    fun testRoot(): Pair<Boolean, String> {
++        val r = runCatching { vm.guestRunner.run(listOf("/system/bin/sh", "-c", vm.shellPrefix + "su -c id"), 60_000) }
++            .getOrElse { -1 to (it.message ?: "error") }
++        val ok = r.first == 0 && r.second.contains("uid=0")
++        val out = r.second.trim().lines().firstOrNull { it.isNotBlank() } ?: "(no output)"
++        return ok to out
++    }
++
++    /** The "ask" path: pop the dialog in the UI; 60 s of silence counts as a deny. */
++    private fun askWith(id: String, pkg: String, uid: Int, cmd: String) {
++        val done = AtomicBoolean(false)
++        val cb = { ok: Boolean ->
++            if (done.compareAndSet(false, true)) respond(id, pkg, uid, cmd, ok)
++        }
++        val handler = onRequest
++        if (handler == null) { cb(false); return }
++        val ask = Ask(pkg, uid, cmd, cb)
++        handler(ask)
++        thread(name = "su-ask-timeout", isDaemon = true) {
++            Thread.sleep(60_000)
++            cb(false)
++        }
++    }
++
++    private fun respond(id: String, pkg: String, uid: Int, cmd: String, allowed: Boolean) {
++        val resp = File(vm.paths.root, "data/aemu-su/resp")
++        resp.mkdirs()
++        if (!allowed) {
++            writeResp(resp, id, "su: $pkg is not allowed to run root commands\n", 1)
++            record(pkg, uid, cmd, ok = false, allowed = false)
++            vm.log("su: denied $pkg: ${cmd.take(60)}")
++            return
++        }
++        val r = runCatching {
++            vm.guestRunner.run(listOf("/system/bin/sh", "-c", vm.shellPrefix + cmd), 600_000)
++        }.getOrElse { -1 to "su: ${it.message}" }
++        writeResp(resp, id, r.second.ifEmpty { "(no output)" }, r.first)
++        record(pkg, uid, cmd, ok = r.first == 0, allowed = true)
++        vm.log("su: $pkg ran ${cmd.take(60)} → exit ${r.first}")
++    }
++
++    private fun writeResp(resp: File, id: String, out: String, code: Int) {
++        runCatching {
++            val o = File(resp, "$id.out.tmp"); o.writeText(out); o.setReadable(true, false)
++            File(resp, "$id.out").delete(); o.renameTo(File(resp, "$id.out"))
++            val r = File(resp, "$id.ret.tmp"); r.writeText("ret=$code\n"); r.setReadable(true, false)
++            File(resp, "$id.ret").delete(); r.renameTo(File(resp, "$id.ret"))
++        }
++    }
++
++    // ------------------------------------------------------------------ guest tree
++
++    /** The `su` script the guest sees, and the request/response folders it uses. Called before the services start. */
++    fun seedGuestFiles() {
++        val root = vm.paths.root
++        runCatching {
++            val req = File(root, "data/aemu-su/req"); req.mkdirs()
++            val resp = File(root, "data/aemu-su/resp"); resp.mkdirs()
++            for (d in listOf(req, resp)) { d.setReadable(true, false); d.setWritable(true, false); d.setExecutable(true, false) }
++        }
++        // root off (or the VM not running) → no su binaries in the guest at all: the switch is what a
++        // root-checker sees, and nothing extra is lying in /system for PackageManager to scan at boot
++        val suFiles = listOf("system/bin/su", "system/xbin/su", "sbin/su")
++        if (!enabled) {
++            for (p in suFiles) runCatching { File(root, p).delete() }
++            runCatching { File(root, "system/app/Superuser.apk").delete() }   // never shipped again, clean up after older builds
++            runCatching { daemonMarker().delete() }
++            return
++        }
++        val script = suScript()
++        for (p in suFiles) runCatching {
++            val f = File(root, p)
++            f.parentFile?.mkdirs()
++            f.writeText(script)
++            f.setReadable(true, false); f.setExecutable(true, false)
++        }
++    }
++
++    private fun suScript() = """#!/system/bin/sh
++# AEmulator su: the host-side daemon runs the command as uid 0 (see core/SuDaemon.kt)
++D=/data/aemu-su
++MYUID=$(id 2>/dev/null || echo "uid=0")
++[ -f "${'$'}D/.daemon" ] || { echo "su: daemon is not running (root is off or the VM is stopped)"; exit 4; }
++CMD=
++if [ "${'$'}1" = "root" ] || [ "${'$'}1" = "0" ]; then shift; fi
++if [ "${'$'}1" = "-c" ]; then shift; fi
++for a in "${'$'}@"; do CMD="${'$'}CMD ${'$'}a"; done
++CMD=${'$'}{CMD# }
++[ -n "${'$'}CMD" ] || { echo "su: nothing to run (usage: su -c <command>)"; exit 2; }
++ID="${'$'}${'$'}.$(date +%s)"
++R="${'$'}D/req/${'$'}ID"
++echo "uid=${'$'}{MYUID#uid=} cmd=${'$'}CMD" > "${'$'}R" 2>/dev/null || { echo "su: cannot write the request"; exit 3; }
++n=0
++while [ ! -f "${'$'}D/resp/${'$'}ID.ret" ]; do
++  sleep 1
++  n=${'$'}((n+1))
++  if [ ${'$'}n -ge 300 ]; then echo "su: timed out waiting for the host daemon"; rm -f "${'$'}R"; exit 1; fi
++done
++cat "${'$'}D/resp/${'$'}ID.out" 2>/dev/null
++RET=$(sed -n "s/^ret=//p" "${'$'}D/resp/${'$'}ID.ret" | head -n 1)
++rm -f "${'$'}R" "${'$'}D/resp/${'$'}ID.out" "${'$'}D/resp/${'$'}ID.ret"
++case "${'$'}RET" in ""|*[!0-9]*) RET=1;; esac
++exit "${'$'}RET"
++"""
++}
+diff --git a/app/src/main/java/app/aemu/core/XposedManager.kt b/app/src/main/java/app/aemu/core/XposedManager.kt
+new file mode 100644
+index 0000000..a2a1894
+--- /dev/null
++++ b/app/src/main/java/app/aemu/core/XposedManager.kt
+@@ -0,0 +1,133 @@
++package app.aemu.core
++
++import org.json.JSONArray
++import org.json.JSONObject
++import java.io.File
++import java.util.zip.ZipEntry
++import java.util.zip.ZipOutputStream
++
++/**
++ * Xposed-style module management for the guest, the VMOS way: a module is installed into the guest as a regular
++ * package (its APK goes to /data/aemu-xposed/modules/<pkg>.apk as well, for the loader of the next phase), and this
++ * manager keeps the registry — package, version, enabled flag, scope — in xposed.json next to the image. The VM's
++ * Modules panel edits the registry; with at least one enabled module the boot seeds the framework markers the
++ * module/manager apps look for (xposed.prop, XposedBridge.jar), so the firmware "sees" the framework.
++ *
++ * The in-process hooking itself (LSPlant, the same engine the foreign VMOS ships) is the next phase: it loads the
++ * enabled modules' dex into a scoped app's process and hands it the standard Xposed API. The registry and the file
++ * layout this manager owns are exactly what that loader consumes.
++ */
++class XposedManager(private val vm: GuestVm) {
++
++    data class Module(val pkg: String, val apk: String, val version: String, val enabled: Boolean, val scope: List<String>)
++
++    private val storeFile: File get() = File(vm.paths.bin, "xposed.json")
++    private val mods = LinkedHashMap<String, Module>()
++
++    init { load() }
++
++    @Synchronized private fun load() {
++        mods.clear()
++        runCatching {
++            val o = JSONObject(storeFile.takeIf { it.isFile }?.readText() ?: "{}")
++            val arr = o.optJSONArray("modules") ?: return
++            for (i in 0 until arr.length()) {
++                val m = arr.optJSONObject(i) ?: continue
++                val pkg = m.optString("pkg")
++                if (pkg.isEmpty()) continue
++                mods[pkg] = Module(pkg, m.optString("apk", modulesDir(pkg).path), m.optString("version", ""),
++                    m.optBoolean("enabled", true), m.optJSONArray("scope")?.let { s -> (0 until s.length()).map { s.optString(it) } } ?: emptyList())
++            }
++        }
++    }
++
++    @Synchronized private fun save() {
++        runCatching {
++            val arr = JSONArray()
++            for (m in mods.values) arr.put(JSONObject()
++                .put("pkg", m.pkg).put("apk", m.apk).put("version", m.version)
++                .put("enabled", m.enabled).put("scope", JSONArray(m.scope)))
++            storeFile.writeText(JSONObject().put("modules", arr).toString(2))
++        }
++    }
++
++    fun modulesDir(pkg: String = ""): File = File(File(vm.paths.root, "data/aemu-xposed"), "modules/$pkg")
++
++    @Synchronized fun list(): List<Module> = mods.values.toList()
++    @Synchronized fun find(pkg: String): Module? = mods[pkg]
++
++    @Synchronized fun add(pkg: String, apk: File, version: String) {
++        val dest = modulesDir(pkg)
++        dest.parentFile?.mkdirs()
++        runCatching { apk.copyTo(dest, overwrite = true) }
++        mods[pkg] = Module(pkg, dest.path, version, enabled = true, scope = emptyList())
++        save()
++        seedMarkers()
++        vm.log("xposed: module $pkg registered")
++    }
++
++    @Synchronized fun setEnabled(pkg: String, on: Boolean) {
++        val m = mods[pkg] ?: return
++        mods[pkg] = m.copy(enabled = on)
++        save()
++        seedMarkers()
++    }
++
++    /** which packages the module applies to (the module's own "recommended scope" is the seed); the LSPlant
++     *  loader of the next phase reads exactly this list */
++    @Synchronized fun setScope(pkg: String, scope: List<String>) {
++        val m = mods[pkg] ?: return
++        mods[pkg] = m.copy(scope = scope.filter { it.isNotBlank() }.distinct())
++        save()
++    }
++
++    /** the scope an Xposed module declares about itself (meta-data "xposedscope", assets/xposed_scope) */
++    fun moduleSelfScope(apk: File): List<String> = runCatching {
++        val pm = vm.ctx.packageManager
++        val info = pm.getPackageArchiveInfo(apk.absolutePath, android.content.pm.PackageManager.GET_META_DATA) ?: return emptyList()
++        val app = info.applicationInfo ?: return emptyList()
++        val declared = app.metaData?.getString("xposedscope")
++        val assets = apk.absolutePath.let { p ->
++            runCatching {
++                java.util.zip.ZipFile(p).use { z ->
++                    val e = z.getEntry("assets/xposed_scope") ?: return@use emptyList<String>()
++                    z.getInputStream(e).bufferedReader().readLines().filter { it.isNotBlank() }
++                }
++            }.getOrDefault(emptyList())
++        }
++        ((declared?.split(",") ?: emptyList()) + assets).map { it.trim() }.filter { it.isNotEmpty() }.distinct()
++    }.getOrDefault(emptyList())
++
++    @Synchronized fun remove(pkg: String) {
++        mods.remove(pkg)
++        save()
++        runCatching { modulesDir(pkg).deleteRecursively() }
++        seedMarkers()
++    }
++
++    /** The guest files the "is Xposed installed?" checks look at. Present while a module is enabled. */
++    fun seedMarkers() {
++        runCatching {
++            val any = mods.values.any { it.enabled }
++            val prop = File(vm.paths.root, "system/xposed.prop")
++            val bridge = File(vm.paths.root, "system/framework/XposedBridge.jar")
++            if (!any) { prop.delete(); bridge.delete(); return }
++            prop.parentFile?.mkdirs()
++            prop.writeText(
++                "version=93\n" +
++                    "versionCode=93\n" +
++                    "name=AEmulator Xposed compatibility\n" +
++                    "description=Modules are managed by the AEmulator app (VM menu → Modules); the LSPlant loader applies them per app\n")
++            if (!bridge.isFile) {
++                ZipOutputStream(bridge.outputStream()).use { z ->
++                    z.putNextEntry(ZipEntry("META-INF/MANIFEST.MF"))
++                    z.write("Manifest-Version: 1.0\nXposed-Bridge: AEmulator compat layer\n\n".toByteArray())
++                    z.closeEntry()
++                    z.putNextEntry(ZipEntry("assets/xposed_bridge_marker"))
++                    z.write("AEmulator Xposed compatibility layer\n".toByteArray())
++                    z.closeEntry()
++                }
++            }
++        }
++    }
++}
+diff --git a/app/src/main/java/app/aemu/ui/VmActivity.kt b/app/src/main/java/app/aemu/ui/VmActivity.kt
+index 8d4be02..1d9843d 100644
+--- a/app/src/main/java/app/aemu/ui/VmActivity.kt
++++ b/app/src/main/java/app/aemu/ui/VmActivity.kt
+@@ -15,6 +15,9 @@ import androidx.compose.material.icons.rounded.BatteryStd
+ import androidx.compose.material.icons.rounded.Cast
+ import androidx.compose.material.icons.rounded.Videocam
+ import androidx.compose.material.icons.rounded.InstallMobile
++import androidx.compose.material.icons.rounded.Security
++import androidx.compose.material.icons.rounded.Extension
++import androidx.compose.material.icons.rounded.NetworkCheck
+ import androidx.compose.material.icons.rounded.Tune
+ import androidx.compose.material.icons.rounded.ContentPaste
+ import androidx.compose.material.icons.rounded.Keyboard
+@@ -67,6 +70,7 @@ import androidx.compose.foundation.background
+ import androidx.compose.foundation.layout.Arrangement
+ import androidx.compose.foundation.layout.Box
+ import androidx.compose.foundation.layout.Column
++import androidx.compose.foundation.layout.PaddingValues
+ import androidx.compose.foundation.layout.Row
+ import androidx.compose.foundation.layout.Spacer
+ import androidx.compose.foundation.layout.fillMaxSize
+@@ -99,6 +103,7 @@ import androidx.compose.material.icons.rounded.VolumeUp
+ import androidx.compose.material3.Button
+ import androidx.compose.material3.Card
+ import androidx.compose.material3.CardDefaults
++import androidx.compose.material3.TextButton
+ import androidx.compose.material3.DropdownMenu
+ import androidx.compose.material3.DropdownMenuItem
+ import androidx.compose.material3.FilledTonalIconButton
+@@ -252,6 +257,8 @@ class VmActivity : ComponentActivity() {
+         led = vm.lights.current
+         vm.lights.onChange { l -> runOnUiThread { led = l } }
+         vm.onLog { line -> runOnUiThread { logLines.add(line); if (logLines.size > 400) logLines.removeRange(0, logLines.size - 400) } }
++        // su requests with the "ask" policy pop a dialog here (answered, or denied after 60 s of silence)
++        vm.su.onRequest = { ask -> runOnUiThread { suAsk = ask } }
+         guest.start()
+         loadMenuOffset()
+ 
+@@ -356,11 +363,13 @@ class VmActivity : ComponentActivity() {
+         }
+     }
+ 
+-    private enum class Dlg { NONE, SMS, CALL, BATTERY, ADB, DEVICE }
++    private enum class Dlg { NONE, SMS, CALL, BATTERY, ADB, DEVICE, SUPERUSER, MODULES, NETWORK }
+ 
+     // position of the floating menu button, kept across launches
+     private val uiPrefs by lazy { getSharedPreferences("vm_ui", MODE_PRIVATE) }
+     private var menuOffset by mutableStateOf(Offset.Zero)
++    /** a su request waiting for the answer of the "ask" policy (SuDaemon.onRequest) */
++    private var suAsk by mutableStateOf<app.aemu.core.SuDaemon.Ask?>(null)
+     private fun loadMenuOffset() { menuOffset = Offset(uiPrefs.getFloat("menu_x", 0f), uiPrefs.getFloat("menu_y", 0f)) }
+     private fun saveMenuOffset() { uiPrefs.edit().putFloat("menu_x", menuOffset.x).putFloat("menu_y", menuOffset.y).apply() }
+ 
+@@ -483,20 +492,247 @@ class VmActivity : ComponentActivity() {
+         recorder = r; recOn.value = true
+     }
+ 
+-    // APK picked on the host: copied into the shared card folder, then installed by the guest's package manager
++    // APK picked on the host: pushed straight into the image's /data/local/tmp and installed by the guest's package
++    // manager — the exact path of the `adb install` that works, because pm refuses APKs on the emulated sdcard
+     private val pickApk = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+         if (uri == null) return@registerForActivityResult
+-        val dir = app.aemu.core.Sdcard.hostDir(vm.paths)
+-        if (dir == null) { toast(getString(R.string.m_failed)); return@registerForActivityResult }
+         toast(getString(R.string.m_install_apk_start))
+         thread {
++            val res = installFromStream(uri, "aemu-install.apk")
++            runCatching { app.aemu.core.TreeFixer(this@VmActivity, vm.paths, vm.img, vm::log).seedOwners() }
++            toast(res.second.trim().lines().lastOrNull { it.isNotBlank() }?.take(200) ?: getString(R.string.m_failed))
++        }
++    }
++
++    /** Copy [uri] into the image's /data/local/tmp and `pm install` it; returns (success, pm's output). */
++    private fun installFromStream(uri: android.net.Uri, name: String): Pair<Boolean, String> {
++        val tmp = java.io.File(vm.paths.root, "data/local/tmp/$name")
++        val ok = runCatching {
++            tmp.parentFile?.mkdirs()
++            contentResolver.openInputStream(uri)!!.use { i -> tmp.outputStream().use { o -> i.copyTo(o) } }
++            tmp.setReadable(true, false)
++        }.isSuccess
++        if (!ok) return false to getString(R.string.m_failed)
++        val out = runCatching { vm.installApk("/data/local/tmp/$name") }.getOrElse { it.toString() }
++        runCatching { tmp.delete() }
++        return out.contains("Success", ignoreCase = true) to out
++    }
++
++    private fun pkgs(): Set<String> = runCatching { vm.guestShell("pm list packages", 90_000) }.getOrDefault("")
++        .lines().map { it.removePrefix("package:").trim() }.filter { it.isNotEmpty() }.toSet()
++
++    private fun versionOf(pkg: String): String = runCatching {
++        vm.guestShell("dumpsys package $pkg", 60_000).lines().map { it.trim() }
++            .firstOrNull { it.startsWith("versionName=") }?.removePrefix("versionName=").orEmpty()
++    }.getOrDefault("")
++
++    // an Xposed module: installed into the guest like a normal app, then registered in the module store
++    private val pickModule = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
++        if (uri == null) return@registerForActivityResult
++        toast(getString(R.string.m_install_apk_start))
++        thread {
++            val tmp = java.io.File(vm.paths.root, "data/local/tmp/aemu-module.apk")
+             val ok = runCatching {
+-                contentResolver.openInputStream(uri)!!.use { i -> java.io.File(dir, "aemu-install.apk").outputStream().use { o -> i.copyTo(o) } }
++                tmp.parentFile?.mkdirs()
++                contentResolver.openInputStream(uri)!!.use { i -> tmp.outputStream().use { o -> i.copyTo(o) } }
++                tmp.setReadable(true, false)
+             }.isSuccess
+             if (!ok) { toast(getString(R.string.m_failed)); return@thread }
+-            val out = runCatching { vm.guestShell("pm install -r " + vm.img.sdcardPath.trimEnd('/') + "/aemu-install.apk", 300_000) }.getOrElse { it.toString() }
++            // the host reads the package name and version straight from the APK: works for a first install
++            // and for an update alike (the old "diff of pm list packages" misfired on module updates)
++            val info = packageManager.getPackageArchiveInfo(tmp.absolutePath, android.content.pm.PackageManager.GET_META_DATA)
++            if (info == null) { runCatching { tmp.delete() }; toast(getString(R.string.mod_install_failed)); return@thread }
++            val pkg = info.packageName
++            val ver = info.versionName ?: ""
++            val md = info.applicationInfo?.metaData
++            val isModule = md?.get("xposedmodule")?.toString() == "true" || md?.containsKey("xposedminversion") == true
++            val out = runCatching { vm.installApk("/data/local/tmp/aemu-module.apk") }.getOrElse { it.toString() }
++            if (!out.contains("Success", ignoreCase = true)) { runCatching { tmp.delete() }; toast(getString(R.string.mod_install_failed)); return@thread }
++            // the scope the module declares about itself pre-fills the scope list
++            val scope = if (isModule) vm.xposed.moduleSelfScope(tmp) else emptyList()
++            vm.xposed.add(pkg, tmp, ver)
++            if (scope.isNotEmpty()) vm.xposed.setScope(pkg, scope)
++            runCatching { tmp.delete() }
+             runCatching { app.aemu.core.TreeFixer(this@VmActivity, vm.paths, vm.img, vm::log).seedOwners() }
+-            toast(out.trim().lines().lastOrNull { it.isNotBlank() }?.take(200) ?: getString(R.string.m_failed))
++            vm.log("xposed: $pkg ${if (isModule) "is an Xposed module" else "(no xposedmodule meta-data)"}, scope ${scope.size}")
++            toast(getString(R.string.mod_installed, pkg))
++        }
++    }
++
++    @Composable
++    private fun NetworkDialog(onDone: () -> Unit) {
++        var report by remember { mutableStateOf<app.aemu.core.GuestVm.NetReport?>(null) }
++        var busy by remember { mutableStateOf(true) }
++        val probe = {
++            busy = true
++            thread { val r = runCatching { vm.networkReport() }.getOrNull(); runOnUiThread { report = r; busy = false } }
++        }
++        LaunchedEffect(Unit) { probe() }
++        AlertDialog(onDismissRequest = { if (!busy) onDone() },
++            title = { Text(stringResource(R.string.m_network)) },
++            text = {
++                Column {
++                    if (busy) Text(stringResource(R.string.net_running), style = MaterialTheme.typography.bodySmall)
++                    else {
++                        val r = report
++                        if (r == null) Text(stringResource(R.string.m_failed), style = MaterialTheme.typography.bodySmall)
++                        else {
++                            Text(r.verdict(), style = MaterialTheme.typography.bodyMedium)
++                            Spacer(Modifier.height(8.dp))
++                            Text("dnsproxyd queries: ${r.dnsQueries}", style = Mono)
++                            Text("net.dns1: ${r.dnsProp.ifEmpty { "?" }}", style = Mono)
++                            if (r.resolvedIp != null) Text("gstatic.com → ${r.resolvedIp}", style = Mono)
++                            if (r.rawIp.isNotBlank()) Text(r.rawIp.lines().take(2).joinToString("\n"), style = Mono, maxLines = 2, overflow = TextOverflow.Ellipsis)
++                            Spacer(Modifier.height(8.dp))
++                            Text(stringResource(R.string.net_hint), style = MaterialTheme.typography.bodySmall)
++                        }
++                    }
++                }
++            },
++            confirmButton = { Button(onClick = { if (!busy) onDone() }) { Text(stringResource(R.string.close)) } },
++            dismissButton = {
++                Row {
++                    TextButton(onClick = { probe() }, enabled = !busy) { Text(stringResource(R.string.net_test_again)) }
++                    TextButton(onClick = {
++                        busy = true
++                        thread { vm.restartGuestNet(); runOnUiThread { busy = false; probe() } }
++                    }, enabled = !busy) { Text(stringResource(R.string.net_restart_netd)) }
++                }
++            })
++    }
++
++    @Composable
++    private fun SuperuserDialog(onDone: () -> Unit) {
++        var st by remember { mutableStateOf(vm.su.store()) }
++        AlertDialog(onDismissRequest = onDone,
++            title = { Text(stringResource(R.string.m_superuser)) },
++            text = {
++                Column {
++                    Row(verticalAlignment = Alignment.CenterVertically) {
++                        Text(stringResource(R.string.su_root_enabled), Modifier.weight(1f))
++                        Switch(st.enabled, { vm.su.setEnabled(it); st = vm.su.store() })
++                    }
++                    // a full round trip: a su -c id runs through the request file, the daemon and back
++                    var suTesting by remember { mutableStateOf(false) }
++                    var suTest by remember { mutableStateOf<String?>(null) }
++                    Row(verticalAlignment = Alignment.CenterVertically) {
++                        TextButton(onClick = {
++                            suTesting = true
++                            thread { val (ok, out) = vm.su.testRoot(); runOnUiThread { suTest = (if (ok) "✓ " else "✗ ") + out; suTesting = false } }
++                        }, enabled = !suTesting && st.enabled) {
++                            Text(stringResource(if (suTesting) R.string.su_testing else R.string.su_test))
++                        }
++                        suTest?.let { Text(it, style = Mono, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f)) }
++                    }
++                    Text(stringResource(R.string.su_default_policy), style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(top = 6.dp))
++                    SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth().padding(top = 4.dp)) {
++                        val opts = listOf("allow" to R.string.su_allow, "ask" to R.string.su_ask, "deny" to R.string.su_deny)
++                        opts.forEachIndexed { i, (v, r) ->
++                            SegmentedButton(selected = st.default == v,
++                                onClick = { vm.su.setDefault(v); st = vm.su.store() },
++                                shape = SegmentedButtonDefaults.itemShape(i, opts.size),
++                                label = { Text(stringResource(r)) })
++                        }
++                    }
++                    Spacer(Modifier.height(10.dp))
++                    Text(stringResource(R.string.su_apps), style = MaterialTheme.typography.bodySmall)
++                    if (st.apps.isEmpty()) Text(stringResource(R.string.su_no_apps), style = MaterialTheme.typography.bodySmall)
++                    else LazyColumn(Modifier.heightIn(max = 160.dp)) {
++                        items(st.apps.size) { i ->
++                            val pkg = st.apps.keys.toList()[i]
++                            val pol = st.apps[pkg] ?: "deny"
++                            Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
++                                Text(pkg, Modifier.weight(1f), maxLines = 1, overflow = TextOverflow.Ellipsis, style = MaterialTheme.typography.bodySmall)
++                                TextButton(onClick = { vm.su.setApp(pkg, if (pol == "deny") "allow" else "deny"); st = vm.su.store() }) {
++                                    Text(stringResource(if (pol == "deny") R.string.su_deny else R.string.su_allow)) }
++                            }
++                        }
++                    }
++                    Spacer(Modifier.height(10.dp))
++                    Row(verticalAlignment = Alignment.CenterVertically) {
++                        Text(stringResource(R.string.su_log), Modifier.weight(1f), style = MaterialTheme.typography.bodySmall)
++                        TextButton(onClick = { vm.su.clearLog(); st = vm.su.store() }) { Text(stringResource(R.string.su_clear_log)) }
++                    }
++                    if (st.log.isEmpty()) Text(stringResource(R.string.su_no_log), style = MaterialTheme.typography.bodySmall)
++                    else LazyColumn(Modifier.heightIn(max = 140.dp)) {
++                        items(st.log.size) { i ->
++                            val e = st.log[i]
++                            val mark = when { !e.allowed -> "deny"; e.ok -> "ok"; else -> "err" }
++                            Text("$mark ${e.pkg}: ${e.cmd}", style = Mono, maxLines = 2, overflow = TextOverflow.Ellipsis)
++                        }
++                    }
++                }
++            },
++            confirmButton = { Button(onClick = onDone) { Text(stringResource(R.string.close)) } })
++    }
++
++    @Composable
++    private fun ModulesDialog(onDone: () -> Unit) {
++        var mods by remember { mutableStateOf(vm.xposed.list()) }
++        var busy by remember { mutableStateOf(false) }
++        // scope editing: which packages the module applies to (comma-separated)
++        var editing by remember { mutableStateOf<app.aemu.core.XposedManager.Module?>(null) }
++        var scopeText by remember { mutableStateOf("") }
++        AlertDialog(onDismissRequest = { if (!busy) onDone() },
++            title = { Text(stringResource(R.string.m_modules)) },
++            text = {
++                Column {
++                    Text(stringResource(R.string.mod_hint), style = MaterialTheme.typography.bodySmall)
++                    Spacer(Modifier.height(8.dp))
++                    if (mods.isEmpty()) Text(stringResource(R.string.mod_none), style = MaterialTheme.typography.bodySmall)
++                    else LazyColumn(Modifier.heightIn(max = 220.dp)) {
++                        items(mods.size) { i ->
++                            val m = mods[i]
++                            Column(Modifier.fillMaxWidth()) {
++                                Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
++                                    Column(Modifier.weight(1f)) {
++                                        Text(m.pkg, maxLines = 1, overflow = TextOverflow.Ellipsis, style = MaterialTheme.typography.bodyMedium)
++                                        if (m.version.isNotEmpty()) Text(m.version, style = MaterialTheme.typography.bodySmall)
++                                    }
++                                    Text(stringResource(if (m.enabled) R.string.mod_on else R.string.mod_off), style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(horizontal = 6.dp))
++                                    Switch(m.enabled, { vm.xposed.setEnabled(m.pkg, it); mods = vm.xposed.list() })
++                                    IconButton(onClick = {
++                                        busy = true
++                                        thread {
++                                            runCatching { vm.guestShell("pm uninstall ${m.pkg}", 120_000) }
++                                            vm.xposed.remove(m.pkg)
++                                            runOnUiThread { mods = vm.xposed.list(); busy = false }
++                                        }
++                                    }) { Icon(Icons.Rounded.Close, stringResource(R.string.close)) }
++                                }
++                                // the scope line: tap to edit the package list the module is applied to
++                                TextButton(onClick = { editing = m; scopeText = m.scope.joinToString(",") }, enabled = !busy,
++                                    contentPadding = PaddingValues(horizontal = 8.dp, vertical = 0.dp)) {
++                                    Text(stringResource(R.string.mod_scope, if (m.scope.isEmpty()) "—" else m.scope.size.toString()),
++                                        style = MaterialTheme.typography.bodySmall, maxLines = 1, overflow = TextOverflow.Ellipsis)
++                                }
++                            }
++                        }
++                    }
++                    Spacer(Modifier.height(8.dp))
++                    Button(onClick = { pickModule.launch(arrayOf("application/vnd.android.package-archive", "application/octet-stream", "*/*")) }, enabled = !busy) {
++                        Text(stringResource(R.string.mod_install))
++                    }
++                }
++            },
++            confirmButton = { Button(onClick = onDone, enabled = !busy) { Text(stringResource(R.string.close)) } })
++
++        editing?.let { m ->
++            AlertDialog(onDismissRequest = { editing = null },
++                title = { Text(m.pkg, maxLines = 2, overflow = TextOverflow.Ellipsis) },
++                text = {
++                    Column {
++                        Text(stringResource(R.string.mod_scope_hint), style = MaterialTheme.typography.bodySmall)
++                        Spacer(Modifier.height(8.dp))
++                        OutlinedTextField(scopeText, { scopeText = it }, modifier = Modifier.fillMaxWidth(), minLines = 2,
++                            placeholder = { Text("com.example.app, com.other.app") })
++                    }
++                },
++                confirmButton = { Button(onClick = {
++                    vm.xposed.setScope(m.pkg, scopeText.split(",").map { it.trim() }.filter { it.isNotEmpty() })
++                    mods = vm.xposed.list(); editing = null
++                }) { Text(stringResource(R.string.mod_scope_save)) } },
++                dismissButton = { TextButton(onClick = { editing = null }) { Text(stringResource(R.string.close)) } })
+         }
+     }
+ 
+@@ -762,6 +998,12 @@ class VmActivity : ComponentActivity() {
+                             enabled = running, onClick = { menu = false; dialog = Dlg.BATTERY })
+                         DropdownMenuItem(text = { Text(stringResource(R.string.m_install_apk)) }, leadingIcon = { Icon(Icons.Rounded.InstallMobile, null) },
+                             enabled = running, onClick = { menu = false; pickApk.launch(arrayOf("application/vnd.android.package-archive", "application/octet-stream", "*/*")) })
++                        DropdownMenuItem(text = { Text(stringResource(R.string.m_superuser)) }, leadingIcon = { Icon(Icons.Rounded.Security, null) },
++                            enabled = running, onClick = { menu = false; dialog = Dlg.SUPERUSER })
++                        DropdownMenuItem(text = { Text(stringResource(R.string.m_modules)) }, leadingIcon = { Icon(Icons.Rounded.Extension, null) },
++                            enabled = running, onClick = { menu = false; dialog = Dlg.MODULES })
++                        DropdownMenuItem(text = { Text(stringResource(R.string.m_network)) }, leadingIcon = { Icon(Icons.Rounded.NetworkCheck, null) },
++                            enabled = running, onClick = { menu = false; dialog = Dlg.NETWORK })
+                         DropdownMenuItem(text = { Text(stringResource(R.string.m_device)) }, leadingIcon = { Icon(Icons.Rounded.Tune, null) },
+                             enabled = running, onClick = { menu = false; dialog = Dlg.DEVICE })
+                         DropdownMenuItem(text = { Text(stringResource(R.string.m_adb)) }, leadingIcon = { Icon(Icons.Rounded.Lan, null) },
+@@ -797,9 +1039,21 @@ class VmActivity : ComponentActivity() {
+                 Dlg.BATTERY -> BatteryDialog { dialog = Dlg.NONE }
+                 Dlg.ADB -> AdbDialog { dialog = Dlg.NONE }
+                 Dlg.DEVICE -> DeviceDialog { dialog = Dlg.NONE }
++                Dlg.SUPERUSER -> SuperuserDialog { dialog = Dlg.NONE }
++                Dlg.MODULES -> ModulesDialog { dialog = Dlg.NONE }
++                Dlg.NETWORK -> NetworkDialog { dialog = Dlg.NONE }
+                 Dlg.NONE -> {}
+             }
+ 
++            // a su request waiting for the answer of the "ask" policy
++            suAsk?.let { a ->
++                AlertDialog(onDismissRequest = { a.respond(false); suAsk = null },
++                    title = { Text(stringResource(R.string.su_request)) },
++                    text = { Text(stringResource(R.string.su_request_body, a.pkg, a.cmd)) },
++                    confirmButton = { TextButton(onClick = { a.respond(true); suAsk = null }) { Text(stringResource(R.string.su_allow)) } },
++                    dismissButton = { TextButton(onClick = { a.respond(false); suAsk = null }) { Text(stringResource(R.string.su_deny)) } })
++            }
++
+             // панель кнопок Android
+             if (vm.settings.showNavBar && !showLog && !showTerm) {
+                 NavBar(Modifier.align(Alignment.BottomCenter).navigationBarsPadding().padding(bottom = if (vm.settings.navSize == 0) 3.dp else 6.dp))
+diff --git a/app/src/main/res/values-zh-rCN/strings.xml b/app/src/main/res/values-zh-rCN/strings.xml
+index fcfe5a4..1417017 100644
+--- a/app/src/main/res/values-zh-rCN/strings.xml
++++ b/app/src/main/res/values-zh-rCN/strings.xml
+@@ -210,4 +210,36 @@
+     <string name="m_vnc">启动 VNC 服务器</string>
+     <string name="m_vnc_stop">停止 VNC 服务器</string>
+     <string name="m_vnc_started">VNC：%1$s，密码 %2$s</string>
++    <!-- root 和模块（VMOS 式超级用户，VM 菜单） -->
++    <string name="m_superuser">超级用户</string>
++    <string name="m_modules">Xposed 模块</string>
++    <string name="su_root_enabled">启用 Root 权限</string>
++    <string name="su_default_policy">没有单独规则的应用使用默认策略</string>
++    <string name="su_allow">允许</string>
++    <string name="su_ask">询问</string>
++    <string name="su_deny">拒绝</string>
++    <string name="su_apps">已设置规则的应用（点击切换）</string>
++    <string name="su_no_apps">还没有应用设置规则：所有 su 请求都按默认策略处理</string>
++    <string name="su_log">最近的 su 请求</string>
++    <string name="su_no_log">还没有应用请求过 Root</string>
++    <string name="su_clear_log">清空日志</string>
++    <string name="su_request">su 请求</string>
++    <string name="su_request_body">%1$s 想要以 Root 身份执行：\n\n%2$s</string>
++    <string name="mod_hint">模块会作为普通应用安装进系统并在此管理（启用/停用、作用范围）。已启用的模块由 LSPlant 加载器应用到其作用范围内的应用。</string>
++    <string name="mod_none">尚未安装模块</string>
++    <string name="mod_install">安装模块（.apk）</string>
++    <string name="mod_installed">模块已安装：%1$s</string>
++    <string name="mod_install_failed">模块安装失败</string>
++    <string name="mod_on">已启用</string>
++    <string name="mod_off">已停用</string>
++    <string name="mod_scope">作用范围：%1$s 个应用 — 点按编辑</string>
++    <string name="mod_scope_hint">模块应用的包名列表，用逗号分隔。若模块自带推荐作用范围，会自动填入。</string>
++    <string name="mod_scope_save">保存范围</string>
++    <string name="su_test">测试 Root</string>
++    <string name="su_testing">检测中…</string>
++    <string name="m_network">网络诊断</string>
++    <string name="net_running">正在检测客机网络…</string>
++    <string name="net_test_again">重新检测</string>
++    <string name="net_restart_netd">重启 netd</string>
++    <string name="net_hint">域名只能通过本应用的 dnsproxyd 桥接解析；能解析出 IP 即代表桥接正常。ping 常常收不到回包是因为引擎过滤 ICMP —— 浏览器和应用仍可通过 TCP 正常联网。</string>
+ </resources>
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+index bfaa5fc..b12008e 100644
+--- a/app/src/main/res/values/strings.xml
++++ b/app/src/main/res/values/strings.xml
+@@ -211,4 +211,36 @@
+     <string name="m_vnc_started">VNC: %1$s, password %2$s</string>
+     <string name="as_led">Notification light</string>
+     <string name="as_led_sub">Show the guest phone’s LED above its screen</string>
++    <!-- root and modules (VMOS-style superuser, VM menu) -->
++    <string name="m_superuser">Superuser</string>
++    <string name="m_modules">Xposed modules</string>
++    <string name="su_root_enabled">Root access enabled</string>
++    <string name="su_default_policy">Default policy for apps without their own rule</string>
++    <string name="su_allow">Grant</string>
++    <string name="su_ask">Ask</string>
++    <string name="su_deny">Deny</string>
++    <string name="su_apps">Apps with their own rule (tap to switch)</string>
++    <string name="su_no_apps">No app has a rule yet: every su call is handled by the default policy</string>
++    <string name="su_log">Recent su requests</string>
++    <string name="su_no_log">Nothing requested root yet</string>
++    <string name="su_clear_log">Clear log</string>
++    <string name="su_request">su request</string>
++    <string name="su_request_body">%1$s wants to run as root:\n\n%2$s</string>
++    <string name="mod_hint">Modules are installed into the guest as regular apps and managed here (enabled/disabled, scope). Enabled modules are applied to their scoped apps by the LSPlant loader.</string>
++    <string name="mod_none">No modules installed</string>
++    <string name="mod_install">Install module (.apk)</string>
++    <string name="mod_installed">Module installed: %1$s</string>
++    <string name="mod_install_failed">Module install failed</string>
++    <string name="mod_on">on</string>
++    <string name="mod_off">off</string>
++    <string name="mod_scope">Scope: %1$s apps — tap to edit</string>
++    <string name="mod_scope_hint">Package names the module applies to, separated by commas. The module\'s own recommended scope is filled in automatically when it declares one.</string>
++    <string name="mod_scope_save">Save scope</string>
++    <string name="su_test">Test root</string>
++    <string name="su_testing">Testing…</string>
++    <string name="m_network">Network</string>
++    <string name="net_running">Testing the guest network…</string>
++    <string name="net_test_again">Test again</string>
++    <string name="net_restart_netd">Restart netd</string>
++    <string name="net_hint">Names can only resolve through the dnsproxyd bridge of this app; a resolved name proves the bridge works. Ping often gets no replies because engines filter ICMP — browsers and apps can still work over TCP.</string>
+ </resources>

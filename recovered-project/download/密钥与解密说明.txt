@@ -1,0 +1,6 @@
+VMOS ROM 分发包 XOR 密钥（2026-11-13 恢复）
+密钥(hex): 257A3839 61766943 4D304B6B 62457339
+密钥(ascii): %z89aviCM0KkbEs9
+适用: rom.img / rom1.img / magisk.zip（按文件绝对偏移以16字节循环异或）
+解密后格式: 7z 归档（rom.img/rom1.img, 内含 fs/ 目录树）与 ZIP（magisk.zip）
+superuser.zip / xposed.zip: 独立加密（推测 RC4，密钥在 Epic.vm 内层，需动态抓取）
