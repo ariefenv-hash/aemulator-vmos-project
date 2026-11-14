@@ -44,3 +44,4 @@
 - 实测时间线：沙盒重置后 attempts 从 2 涨到 3；2026-11-13 23:50 第三次克隆成功，将上一会话全量文件（含 169MB APK、537MB ROM、构建产物、反编译树、报告）恢复进 `/tmp/my-project`，且保留原始 mtime。
 - 结论：**云端快照是真实文件快照，不只是清单**；沙盒重置后文件有概率随平台重试自动回来，但次数与时机不可控——黄金法则仍是：阶段性产物立即 push 到 GitHub（git 或 Release），不得依赖自动恢复。
 - 克隆逻辑本体在 `/app/zcode-driver`（root-only，沙盒内不可读）；`/opt/zcode` 仅含运行时（manifest/builtin），无 payload；两个 JSON 内亦无 payload URL（grep 命中均为 android-sdk 文件路径的误报）。
+- 预览服务重启命令（环境会在工具调用间回收进程，需要时执行）：`cd /home/z/my-project && setsid nohup env NODE_ENV=production PORT=3000 bun .next/standalone/server.js >> server.log 2>&1 &` 然后 curl http://localhost:3000 验证。
